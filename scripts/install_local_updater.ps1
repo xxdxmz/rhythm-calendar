@@ -10,7 +10,7 @@ if (-not (Test-Path -LiteralPath $updateScript)) {
 $action = New-ScheduledTaskAction `
     -Execute $powershell `
     -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$updateScript`""
-$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(2) `
+$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddHours(6) `
     -RepetitionInterval (New-TimeSpan -Hours 6)
 $settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
