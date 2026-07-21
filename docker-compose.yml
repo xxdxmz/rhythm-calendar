@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+      ARCAEA_FETCH_INTERVAL_MINUTES: 60
+    volumes:
+      - rhythm-data:/app/data
+
+volumes:
+  rhythm-data:

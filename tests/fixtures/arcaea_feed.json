@@ -1,0 +1,24 @@
+{
+  "code": 0,
+  "message": "0",
+  "data": {
+    "items": [
+      {
+        "id_str": "1175351990658531334",
+        "type": "DYNAMIC_TYPE_WORD",
+        "modules": {
+          "module_author": {"pub_ts": 1773014400},
+          "module_dynamic": {"desc": {"text": "在3月9日开启的6.13版本中，七首歌曲将新增Beyond难度。"}}
+        }
+      },
+      {
+        "id_str": "1234567890",
+        "type": "DYNAMIC_TYPE_AV",
+        "modules": {
+          "module_author": {"pub_ts": 1773100800},
+          "module_dynamic": {"desc": null, "major": {"archive": {"title": "Arcaea 新曲预告"}}}
+        }
+      }
+    ]
+  }
+}

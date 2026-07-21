@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-07-21T16:16:22.945844+00:00",
+  "games": [
+    {
+      "id": 1,
+      "name": "Arcaea",
+      "display_name": "Arcaea",
+      "enabled": true
+    }
+  ],
+  "dynamics": [
+    {
+      "dynamic_id": "1217671868976201753",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "v6.15现已到来，全新综合曲包《Virtual Singers》带来了五首全新歌曲。\n\n此外，全新单曲「Sucromania」by STEAKA现已加入回忆档案馆。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-06-25T01:08:45+00:00",
+      "url": "https://www.bilibili.com/opus/1217671868976201753",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1217283069206069255",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "糖果，糖果…\n溶化，溶化…\n是色彩与甜蜜的诱惑。\n\n6月25日，全新原创单曲「Sucromania」by STEAKA将加入回忆档案馆。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-06-24T00:00:00+00:00",
+      "url": "https://www.bilibili.com/opus/1217283069206069255",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1216912499382681602",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "v6.15版本起，曲包选择菜单将新增一个类别——“综合”，其中的歌曲种类将进一步丰富！\n\n《Arcaea Next Stage》和《UNDERTALE》曲包将归属于这一新类别，而首个新加入的曲包是将于6月25日上线的《Virtual Singers》。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-06-23T00:02:00+00:00",
+      "url": "https://www.bilibili.com/opus/1216912499382681602",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1216912241695129622",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "请留意：综合曲包《Virtual Singers》为期间限定获得内容，须在2029年6月24日前取得，\n规定时段内未获取的，将无法通过任何其他方式获取。\n\n在规定时段内购买该曲包后，\n曲包内容在2029年6月24日后仍然有效。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-06-23T00:01:00+00:00",
+      "url": "https://www.bilibili.com/opus/1216912241695129622",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1216911984017014839",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "Arcaea v6.15版本将迎来全新“综合”类别曲包，涵盖一对熟悉面孔所歌唱的五首新曲！\n\n《Virtual Singers》曲包将自6月25日起开放获取。\n\n来自四面八方的梦想，自数字的舞台上汇聚！\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-06-23T00:00:00+00:00",
+      "url": "https://www.bilibili.com/opus/1216911984017014839",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1207280788280705031",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "v6.14.10版本现已上线！\n\n回忆档案馆和World Extend均新增两首曲目，其中包括来自vivid/stasis的Crossing Pulse曲目。\n\n此外，搭档选择界面也焕然一新，新增了多项重要功能！\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-28T01:06:03+00:00",
+      "url": "https://www.bilibili.com/opus/1207280788280705031",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1206521856855638019",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "奈美的限时角色地图具体活动时间为北京时间5月28日08:00至6月18日23:00！\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-26T00:01:00+00:00",
+      "url": "https://www.bilibili.com/opus/1206521856855638019",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1206521599102025728",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "再次踏上这段无尽之旅吧！\n\n奈美（暮光）将于5月28日起限时返场！\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-26T00:00:00+00:00",
+      "url": "https://www.bilibili.com/opus/1206521599102025728",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1206151029336309762",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "本次搭档选择界面更新还引进了“预设”功能。\n\n您最多可以新增三位搭档到预设中，以便在Arcaea的任何位置快速切换。\n\n此外，还可以将您最喜欢的搭档新增至个人名片顶部位置，将其显示在个人名片中。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-25T00:02:00+00:00",
+      "url": "https://www.bilibili.com/opus/1206151029336309762",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1206150771681263635",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "v6.14.10版本中，搭档选择界面将迎来重大更新！\n\n全新的可拖动选单、更丰富的排序和筛选选项来找到搭档，或是直接按名称搜寻。\n\n查看已获得和未获得搭档的详细信息，包括其基础属性、最高属性和觉醒等级，以及特定搭档的各种型态变换。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-25T00:01:00+00:00",
+      "url": "https://www.bilibili.com/opus/1206150771681263635",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1205779686496403461",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "「flexidefine」by Lamanya将于5月28日加入世界模式！该曲目的限时地图具体活动时间为北京时间5月28日08:00至6月18日23:00！\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-24T00:01:00+00:00",
+      "url": "https://www.bilibili.com/opus/1205779686496403461",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1205779428793122819",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "天地之变，静止于震颤间。\n吐息之间，异响幻化新生。\n\n「flexidefine」by Lamanya将随5月28日v6.14.10版本更新加入World Extend。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2026-05-24T00:00:00+00:00",
+      "url": "https://www.bilibili.com/opus/1205779428793122819",
+      "dynamic_type": "DYNAMIC_TYPE_DRAW",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    },
+    {
+      "dynamic_id": "1115605755020443734",
+      "game": "Arcaea",
+      "uid": "404145357",
+      "text": "有一个更好的地方，那颗动摇的心脏带来的毁灭无法触及；有一个更好的地方，而你——就在那里。\n\n和摩耶一起去另一边吧。 10月2日，Arcaea 6.9版本第二幕主线剧情曲包第叁点伍弹《Liminal Eclipse》将发布，涵盖5首新曲。\n#韵律源点# #arcaea# #音游#",
+      "publish_time": "2025-09-23T00:00:06+00:00",
+      "url": "https://www.bilibili.com/opus/1115605755020443734",
+      "dynamic_type": "DYNAMIC_TYPE_AV",
+      "fetched_at": "2026-07-21T16:03:16.162032+00:00"
+    }
+  ],
+  "status": {
+    "last_attempt_at": "2026-07-21T16:03:16.227491+00:00",
+    "last_success_at": "2026-07-21T16:03:16.227491+00:00",
+    "last_error": null,
+    "stale": false
+  }
+}
