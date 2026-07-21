@@ -9,7 +9,10 @@
 3. 在 `Actions` 中手动运行一次 `Update public dynamics data`。
 4. 本项目的数据地址为 `https://xxdxmz.github.io/rhythm-calendar/data/snapshot.json`。
 
-若抓取失败，工作流会失败，不会用空数据覆盖上一次成功结果。
+若 GitHub 公共 Runner 被 Bilibili 风控，工作流会发布仓库内最后一份非空快照，
+并在 `status` 中标记 `stale: true` 和错误原因，不会发布空数据或伪造更新时间。
+GitHub 机房 IP 是否可访问 Bilibili 并不稳定；要稳定自动更新，需要使用家庭网络中的
+自托管 Runner，或者后续接入另一个合法公开数据源。
 
 ## Netlify 前端
 

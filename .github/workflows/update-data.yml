@@ -28,7 +28,11 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python -m playwright install --with-deps chromium
-      - run: python -m backend.export_static --output public-data/data/snapshot.json
+      - name: Collect or publish the last known snapshot
+        run: >-
+          python -m backend.export_static
+          --output public-data/data/snapshot.json
+          --fallback frontend/public/data/snapshot.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
