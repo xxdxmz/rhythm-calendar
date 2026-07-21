@@ -9,6 +9,7 @@ data/raw/**/*.json
 !data/raw/.gitkeep
 data/*.sqlite3
 data/*.sqlite3-*
+data/logs/
 frontend/node_modules/
 frontend/dist/
 frontend/*.tsbuildinfo
