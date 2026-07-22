@@ -32,6 +32,12 @@ function Invoke-GitPush([int]$TimeoutSeconds = 45) {
     $startInfo.RedirectStandardOutput = $true
     $startInfo.RedirectStandardError = $true
     $startInfo.EnvironmentVariables['GCM_INTERACTIVE'] = 'Never'
+    # Some networks block Windows' certificate-revocation endpoint. Keep normal
+    # TLS certificate validation, but skip that online revocation lookup only
+    # for this one unattended push process.
+    $startInfo.EnvironmentVariables['GIT_CONFIG_COUNT'] = '1'
+    $startInfo.EnvironmentVariables['GIT_CONFIG_KEY_0'] = 'http.schannelCheckRevoke'
+    $startInfo.EnvironmentVariables['GIT_CONFIG_VALUE_0'] = 'false'
 
     $process = New-Object System.Diagnostics.Process
     $process.StartInfo = $startInfo
