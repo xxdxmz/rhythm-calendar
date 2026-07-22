@@ -22,7 +22,7 @@ def export_snapshot(
     initialize_database()
     if refresh:
         try:
-            refresh_all_accounts()
+            refresh_all_accounts(progress=lambda message: print(message, flush=True))
         except BilibiliError as exc:
             if fallback is None or not fallback.exists():
                 raise

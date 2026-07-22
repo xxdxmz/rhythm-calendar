@@ -22,6 +22,19 @@ function Write-UpdateLog([string]$Message) {
     Write-Output $line
 }
 
+function Wait-WithProgress([int]$Seconds, [string]$Reason) {
+    for ($remaining = $Seconds; $remaining -gt 0; $remaining--) {
+        $elapsed = $Seconds - $remaining
+        $percent = if ($Seconds -gt 0) { [int](100 * $elapsed / $Seconds) } else { 100 }
+        Write-Progress `
+            -Activity 'Rhythm Calendar 数据更新' `
+            -Status "$Reason，剩余 $remaining 秒" `
+            -PercentComplete $percent
+        Start-Sleep -Seconds 1
+    }
+    Write-Progress -Activity 'Rhythm Calendar 数据更新' -Completed
+}
+
 function Invoke-GitPush([int]$TimeoutSeconds = 45) {
     # Git writes normal progress to stderr. Temporarily keep native stderr from
     # becoming a terminating PowerShell error and judge success by ExitCode.
@@ -48,7 +61,7 @@ function Push-GitHubWithRetry {
     for ($attempt = 0; $attempt -lt $delays.Count; $attempt++) {
         if ($delays[$attempt] -gt 0) {
             Write-UpdateLog "Waiting $($delays[$attempt]) seconds before push retry"
-            Start-Sleep -Seconds $delays[$attempt]
+            Wait-WithProgress $delays[$attempt] "等待第 $($attempt + 1) 次 GitHub 上传"
         }
         $pushResult = Invoke-GitPush
         $pushExitCode = $pushResult.ExitCode
@@ -72,16 +85,19 @@ try {
         throw 'Git executable not found'
     }
 
+    Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '准备环境' -PercentComplete 2
     Write-UpdateLog 'Starting anonymous music-game account collection'
     Push-Location $projectRoot
     try {
         $env:GCM_INTERACTIVE = 'Never'
         $ahead = & $git rev-list --count '@{upstream}..HEAD'
         if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
+            Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '上传上次保留的本地提交' -PercentComplete 8
             Write-UpdateLog "Found $ahead pending local commit(s); uploading them first"
             Push-GitHubWithRetry
         }
 
+        Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '采集14个B站账号' -PercentComplete 15
         & $python -m backend.export_static --output $snapshot --fallback $snapshot
         if ($LASTEXITCODE -ne 0) { throw "Collector exited with $LASTEXITCODE" }
 
@@ -90,9 +106,11 @@ try {
             throw 'Collector produced an empty snapshot'
         }
         Write-UpdateLog "Collected $($payload.dynamics.Count) dynamics"
+        Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '数据生成完成' -PercentComplete 75
 
         if ($NoPush) {
             Write-UpdateLog 'NoPush requested; skipping GitHub upload'
+            Write-Progress -Activity 'Rhythm Calendar 数据更新' -Completed
             exit 0
         }
 
@@ -100,18 +118,23 @@ try {
         & $git diff --cached --quiet
         if ($LASTEXITCODE -eq 0) {
             Write-UpdateLog 'Snapshot unchanged; nothing to upload'
+            Write-Progress -Activity 'Rhythm Calendar 数据更新' -Completed
             exit 0
         }
-        & $git commit -m "Update Arcaea dynamics $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
+        & $git commit -m "Update music game dynamics $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
         if ($LASTEXITCODE -ne 0) { throw "Git commit exited with $LASTEXITCODE" }
+        Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '上传到 GitHub' -PercentComplete 88
         Push-GitHubWithRetry
         Write-UpdateLog 'Snapshot uploaded successfully'
+        Write-Progress -Activity 'Rhythm Calendar 数据更新' -Status '更新成功' -PercentComplete 100
+        Write-Progress -Activity 'Rhythm Calendar 数据更新' -Completed
     }
     finally {
         Pop-Location
     }
 }
 catch {
+    Write-Progress -Activity 'Rhythm Calendar 数据更新' -Completed
     Write-UpdateLog "FAILED: $($_.Exception.Message)"
     exit 1
 }
