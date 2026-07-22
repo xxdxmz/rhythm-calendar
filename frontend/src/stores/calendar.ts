@@ -39,7 +39,7 @@ export const useCalendarStore = defineStore('calendar', () => {
       .filter((item) => !parsedDynamicIds.has(item.dynamic_id))
       .map((item) => ({
         id: item.dynamic_id,
-        title: item.text.split('\n').find(Boolean)?.slice(0, 30) || `${item.game} 公告`,
+        title: `${item.game} · ${item.text.split('\n').find(Boolean)?.slice(0, 24) || '公告'}`,
         start: item.publish_time,
         allDay: true,
         backgroundColor: gameColor(item.game),
@@ -48,7 +48,7 @@ export const useCalendarStore = defineStore('calendar', () => {
       }))
     const parsedEvents = filteredEvents.value.map((item) => ({
       id: item.id,
-      title: `[${eventLabels[item.event_type]}] ${item.title.slice(0, 26)}`,
+      title: `${item.game} · [${eventLabels[item.event_type]}] ${item.title.slice(0, 20)}`,
       start: item.event_date,
       allDay: true,
       backgroundColor: activeGame.value === 'all' ? gameColor(item.game) : eventColors[item.event_type],

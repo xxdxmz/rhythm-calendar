@@ -1,4 +1,4 @@
-from backend.parser import parse_arcaea_event, parse_arcaea_events
+from backend.parser import parse_arcaea_event, parse_arcaea_events, parse_events
 
 
 def dynamic(text: str, publish_time: str = "2026-06-23T00:00:00+00:00") -> dict:
@@ -61,3 +61,27 @@ def test_activity_range_is_one_event_with_end_date() -> None:
     assert len(events) == 1
     assert events[0]["event_date"] == "2026-05-28"
     assert events[0]["event_end_date"] == "2026-06-18"
+
+
+def test_extracts_japanese_slash_date_with_weekday() -> None:
+    event = parse_arcaea_event(
+        dynamic("7/17（金）より新曲を追加します。", "2026-07-10T00:00:00+00:00")
+    )
+    assert event is not None
+    assert event["event_date"] == "2026-07-17"
+
+
+def test_slash_date_rolls_over_new_year() -> None:
+    event = parse_arcaea_event(
+        dynamic("1/2（金）よりイベント開始", "2026-12-28T00:00:00+00:00")
+    )
+    assert event is not None
+    assert event["event_date"] == "2027-01-02"
+
+
+def test_duplicate_reposts_create_one_calendar_event() -> None:
+    first = {**dynamic("7/17（金）新曲追加"), "dynamic_id": "100", "game": "maimai 日服资讯"}
+    repost = {**first, "dynamic_id": "200"}
+    events = parse_events([first, repost])
+    assert len(events) == 1
+    assert events[0]["source_dynamic_id"] == "200"

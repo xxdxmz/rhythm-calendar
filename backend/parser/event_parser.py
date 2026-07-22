@@ -6,10 +6,18 @@ from datetime import date, datetime
 from typing import Iterable
 
 
-DATE_PATTERN = re.compile(
-    r"(?:(?P<year>20\d{2})\s*年\s*)?"
-    r"(?P<month>1[0-2]|0?[1-9])\s*月\s*"
-    r"(?P<day>3[01]|[12]\d|0?[1-9])\s*日"
+DATE_PATTERNS = (
+    re.compile(
+        r"(?:(?P<year>20\d{2})\s*年\s*)?"
+        r"(?P<month>1[0-2]|0?[1-9])\s*月\s*"
+        r"(?P<day>3[01]|[12]\d|0?[1-9])\s*日"
+    ),
+    # Japanese announcements commonly use forms such as 7/17（金）.
+    # Requiring a slash keeps dotted game versions such as v6.15 out.
+    re.compile(
+        r"(?<!\d)(?P<month>1[0-2]|0?[1-9])/(?P<day>3[01]|[12]\d|0?[1-9])"
+        r"(?:[（(][月火水木金土日](?:曜日)?[）)])?"
+    ),
 )
 
 TYPE_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
@@ -29,7 +37,8 @@ def _publication_date(value: str | datetime) -> date:
 
 
 def _date_from_match(match: re.Match[str], published: date) -> date | None:
-    year = int(match.group("year")) if match.group("year") else published.year
+    matched_year = match.groupdict().get("year")
+    year = int(matched_year) if matched_year else published.year
     month = int(match.group("month"))
     day = int(match.group("day"))
     try:
@@ -39,7 +48,7 @@ def _date_from_match(match: re.Match[str], published: date) -> date | None:
 
     # Around New Year, an undated January announcement made in December usually
     # refers to next year, while a December date mentioned in January is recent.
-    if not match.group("year"):
+    if not matched_year:
         if published.month == 12 and month == 1:
             candidate = candidate.replace(year=year + 1)
         elif published.month == 1 and month == 12:
@@ -49,11 +58,12 @@ def _date_from_match(match: re.Match[str], published: date) -> date | None:
 
 def _extract_dates(text: str, published: date) -> list[tuple[re.Match[str], date]]:
     results: list[tuple[re.Match[str], date]] = []
-    for match in DATE_PATTERN.finditer(text):
-        candidate = _date_from_match(match, published)
-        if candidate is not None:
-            results.append((match, candidate))
-    return results
+    for pattern in DATE_PATTERNS:
+        for match in pattern.finditer(text):
+            candidate = _date_from_match(match, published)
+            if candidate is not None:
+                results.append((match, candidate))
+    return sorted(results, key=lambda item: item[0].start())
 
 
 def _event_type(text: str) -> str:
@@ -173,4 +183,14 @@ def parse_arcaea_events(dynamics: Iterable[dict]) -> list[dict]:
 
 def parse_events(dynamics: Iterable[dict]) -> list[dict]:
     """Parse configured games with the shared date and keyword rules."""
-    return parse_arcaea_events(dynamics)
+    parsed = parse_arcaea_events(dynamics)
+    unique: list[dict] = []
+    seen: set[tuple[str, str, str]] = set()
+    for event in parsed:
+        normalized_title = re.sub(r"\s+", "", event["title"]).casefold()
+        key = (event["game"], event["event_date"], normalized_title)
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(event)
+    return unique

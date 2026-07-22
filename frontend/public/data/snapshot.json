@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T05:08:59.360570+00:00",
+  "generated_at": "2026-07-22T06:00:03.269819+00:00",
   "games": [
     {
       "id": 1,
@@ -1859,17 +1859,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1206151029336309762-1",
-      "game": "Arcaea",
-      "source_dynamic_id": "1206151029336309762",
-      "title": "请留意：综合曲包《Virtual Singers》为期间限定获得内容，须在2029年6月24日前取得，",
-      "description": "请留意：综合曲包《Virtual Singers》为期间限定获得内容，须在2029年6月24日前取得，\n规定时段内未获取的，将无法通过任何其他方式获取。\n\n在规定时段内购买该曲包后，\n曲包内容在2029年6月24日后仍然有效。\n#韵律源点# #arcaea# #音游#",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2029-06-24",
-      "url": "https://www.bilibili.com/opus/1206151029336309762",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1217671868976201753-1",
       "game": "Arcaea",
       "source_dynamic_id": "1217671868976201753",
@@ -1892,17 +1881,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223282279477936193-2",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223282279477936193",
-      "title": "复刻期间为【7月17日 更新后 ~ 9月20日23:59】",
-      "description": "《范式：起源》 v4.9 更新\n\n晚风拂过，她以熟悉的姿态再次驻足于此……\n\n4.9版本更新后，限定皮肤【Para - 暮夜之宴】将限时复刻！\n复刻期间为【7月17日 更新后 ~ 9月20日23:59】！",
-      "event_type": "VERSION_UPDATE",
-      "event_date": "2026-09-20",
-      "url": "https://www.bilibili.com/opus/1223282279477936193",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1224024449866530820-2",
       "game": "范式：起源",
       "source_dynamic_id": "1224024449866530820",
@@ -1914,17 +1892,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223653364679573505-2",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223653364679573505",
-      "title": "7月17日 更新后 ~ 8月23日11:59，游戏内部分付费内容将开启限时折扣",
-      "description": "【特别折扣活动开启！】\n\n夏日炎炎，自然少不了折扣活动！\n7月17日 更新后 ~ 8月23日11:59，游戏内部分付费内容将开启限时折扣！\n\n详细信息请参考下方图片哦！",
-      "event_type": "EVENT",
-      "event_date": "2026-08-23",
-      "url": "https://www.bilibili.com/opus/1223653364679573505",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1225887606676389897-1",
       "game": "范式：起源",
       "source_dynamic_id": "1225887606676389897",
@@ -1933,17 +1900,6 @@
       "event_type": "EVENT",
       "event_date": "2026-08-22",
       "url": "https://www.bilibili.com/opus/1225887606676389897",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1223375050814521385-1",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223375050814521385",
-      "title": "《范式：起源》官方赛事【Champions of Paradigm 2026】线下总决赛现已正式定档【8月22日 / 杭州】",
-      "description": "🌱♻【重大发表】COP 2026 决赛正式定档！♻🌱\n\n《范式：起源》官方赛事【Champions of Paradigm 2026】线下总决赛现已正式定档【8月22日 / 杭州】！\n\n7月11日（本周六）晚18:00，赛事门票将于【bilibili会员购】独家开售！\n点击以下购票链接，进入页面后点击【设置提醒】，不错过售票时间！\n网页链接\n\n🌱活动时间\n8月22日（全天）\n\n🌱活动地点\n杭州市 拱墅区 拱宸桥街道 小河公园一号仓库 CH8 Livehouse\n\n🌱活动内容\n赛前预热・赛事本体・周边贩售・更新爆料・更多神秘内容……\n\n🌱现场演出\nDJ Set：Supa7onyz・DJ MossyStone・Salty Salt @Supa7onyz @苔石_ @咸盐_SaltySalt\n交响乐演出：和音社交响乐团  @和音社交响乐团\n\n🌱票务权益\n本次门票将分为【INF+】【INF】两档。\n各档位价格 / 权益 / 详细场地布局 / 观赛区域指引，请点击下方 P8 长图查看详细👇\n\n🌱注意事项\n・活动入场时间为【INF+档：08：30】/【INF档：09：30】。\n・购票观众【不限制场内进出次数】，重复入场时需出示【COP2026 限定手环】。\n・【INF+】档观众需要凭对应档位的【COP2026 限定手环】进入专属观赛区域。\n・其余活动须知请参照对应售票页面。\n\n\n活动当日时间表、赛制赛程、周边场贩信息等更多内容，还请持续关注官方播报！\n8月22日，我们不见不散！",
-      "event_type": "EVENT",
-      "event_date": "2026-08-22",
-      "url": "https://www.bilibili.com/opus/1223375050814521385",
       "status": "AUTO_PARSED"
     },
     {
@@ -1969,14 +1925,14 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1225122243512631313-2",
-      "game": "Rotaeno",
-      "source_dynamic_id": "1225122243512631313",
-      "title": "活动时间：7月23日～8月9日",
-      "description": "【Rotaeno限时活动预告】\n参与限时活动，赢取S0航行等级、驾驶员「莫娜 - Show Time☆ -」、限定头像以及航行数据等众多奖励。\n本次的活动玩法为「漫游活动」。\n同时，本次漫游活动将追加特殊挑战任务，记得来看看莫娜为大家准备了哪些有趣的扑克牌任务呦～\n\n*驾驶员「莫娜 - Show Time☆ -」为购买曲包「幻境迷踪」的限定奖励。\n活动时间：7月23日～8月9日",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-08-09",
-      "url": "https://www.bilibili.com/opus/1225122243512631313",
+      "id": "event-1227735301609226242-2",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227735301609226242",
+      "title": "7/23 12:00 ～ 7/31 11:59",
+      "description": "【即将举办「Open up my feelings!招募」】\n#初音未来缤纷舞台# #PJSK# #花里实乃理# #桐谷遥# #日野森雫# \n\n尊敬的各位「世界」居民：\n\n感谢各位居民对《初音未来：缤纷舞台》的支持。\n我们将于7/23 12:00起举办新成员登场招募活动「Open up my feelings!招募」。\n\n【举办时间】\n7/23 12:00 ～ 7/31 11:59\n \n本次招募会有3名新成员登场，且出现率比同等稀有度的其他成员更高。\n\n必定出现★2及以上成员。\n在“招募10次”中必定会获得1名★3及以上的成员。\n\n此外，消耗付费水晶x1500可享受特惠“招募10次”机会，每人仅限1次。\n \n「Open up my feelings!招募」中登场的新成员\n★4[编织真挚的心愿] 花里实乃理\n★4[Fantastic！训练室] 桐谷遥\n★4[让人安心的早饭] 日野森雫\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-31",
+      "url": "https://www.bilibili.com/opus/1227735301609226242",
       "status": "AUTO_PARSED"
     },
     {
@@ -1991,17 +1947,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223359588939595840-2",
-      "game": "Muse Dash",
-      "source_dynamic_id": "1223359588939595840",
-      "title": "⭐ 活动时间：6 月 26 日 ~ 7 月 31 日 17:00",
-      "description": "😽【转发抽奖】😽\n┈┈┈┈┈ ▽ 抽奖奖品 ▽ ┈┈┈┈┈\n▽ 小幽灵给你看看我的猫盲盒一套（1位）\n▽ 扭蛋 窥探鬼怪的猫咪摆件一套（1位）\n\n== Muse Dash 八周年同人征集计划 start！==\n这次制作组联合喵斯广播公司 PBS \n为庆祝喵斯快跑与小伙伴们走过的第八年，\n我们在此向各位跃跃欲试的小伙伴们征集——\n美味可口的同人作品！ (*ˇωˇ*人)\n无论是凛、布若和玛莉嘉的周年庆美图，还是三人组的未公开花絮，统统都要！\n优秀作品会在最终放送上展示\n还有专属奖励哦~\n\n【PBS 喵斯异闻录】幽灵玛莉嘉照片收集中！\n(゜ロ゜;)┛ 务必小心！并尽量留下ta的照▅片發▅送至▅▅\n⭐ 活动时间：6 月 26 日 ~ 7 月 31 日 17:00\n⭐ 参与方式：活动期间填写报名表使用定活动标签发布你的作品，详情请查看附图及评论置顶~",
-      "event_type": "EVENT",
-      "event_date": "2026-07-31",
-      "url": "https://www.bilibili.com/opus/1223359588939595840",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1225976347119058947-1",
       "game": "Phigros",
       "source_dynamic_id": "1225976347119058947",
@@ -2013,6 +1958,17 @@
       "status": "AUTO_PARSED"
     },
     {
+      "id": "event-1226622046103928834-2",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1226622046103928834",
+      "title": "7/20 00:00 ～ 7/26 23:59",
+      "description": "#初音未来缤纷舞台# #PJSK# #草薙宁宁# \n\n尊敬的各位「世界」居民：\n\n7/20 00:00 起将举办「[草薙宁宁] HAPPY BIRTHDAY 2026 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY 2025 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY Stamp 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY Flower招募」。\n本招募中会出现稀有度[生日]、[★3]、[★2]的「草薙宁宁」～🎂\n快去《初音未来：缤纷舞台》与喜爱的成员相遇吧💕\n\n【举办时间】\n7/20 00:00 ～ 7/26 23:59\n\n「[草薙宁宁]HAPPY BIRTHDAY 2026招募」中登场的新成员👇\n🎂[生日]／[Happy Birthday!!2026] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY 2025招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!2025] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY Stamp招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!Stamp] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY Flower招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!Flower] 草薙宁宁\n\n今后也请多多支持《初音未来：缤纷舞台》！\n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-26",
+      "url": "https://www.bilibili.com/opus/1226622046103928834",
+      "status": "AUTO_PARSED"
+    },
+    {
       "id": "event-1226375474173706240-1",
       "game": "Bleap 闪音跃动",
       "source_dynamic_id": "1226375474173706240",
@@ -2021,17 +1977,6 @@
       "event_type": "EVENT",
       "event_date": "2026-07-24",
       "url": "https://www.bilibili.com/opus/1226375474173706240",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1226273550253424710-1",
-      "game": "Bleap 闪音跃动",
-      "source_dynamic_id": "1226273550253424710",
-      "title": "7月24日-26日，期待我们的见面",
-      "description": "动感节拍、潮酷穿搭、沉浸式音乐体验——\n跑酷式音游《闪音跃动》即将参展缀梦国际音游博览会\n\n现场有超大屏畅玩多首付费歌曲，还有限定周边可免费领取！\n7月24日-26日，期待我们的见面！@Bleap闪音跃动",
-      "event_type": "EVENT",
-      "event_date": "2026-07-24",
-      "url": "https://www.bilibili.com/opus/1226273550253424710",
       "status": "AUTO_PARSED"
     },
     {
@@ -2059,16 +2004,26 @@
       "event_end_date": "2026-07-26"
     },
     {
-      "id": "event-1200367984734896136-1",
-      "game": "Notanote",
-      "source_dynamic_id": "1200367984734896136",
-      "title": "展会时间：7月24日—7月26日",
-      "description": "这里是诺塔！我来和大家介绍本次缀梦DREAM音游展的全新周边啦，快来看看我准备的可爱好物～\n展会时间：7月24日—7月26日\n展会地点：杭州大会展中心（浙江省杭州市萧山区美狮线与岩南线交叉路口往西约210米）\n\n参展期间还会同步开启3.0前瞻测试，精彩内容敬请期待哦！摊位还藏了超多惊喜彩蛋等着大家来找我玩～\n另外近期我们也会放出3.0大版本的全局介绍，记得多多关注Notanote官方账号！\n7.24-7.26杭州大会展中心，我在摊位等着大家过来贴贴🥰\n\n#Notanote# #诺物语# #音乐游戏# #音游展# #缀梦#",
-      "event_type": "VERSION_UPDATE",
-      "event_date": "2026-07-24",
-      "url": "https://www.bilibili.com/opus/1200367984734896136",
-      "status": "AUTO_PARSED",
-      "event_end_date": "2026-07-26"
+      "id": "event-1227735301609226242-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227735301609226242",
+      "title": "我们将于7/23 12:00起举办新成员登场招募活动「Open up my feelings",
+      "description": "【即将举办「Open up my feelings!招募」】\n#初音未来缤纷舞台# #PJSK# #花里实乃理# #桐谷遥# #日野森雫# \n\n尊敬的各位「世界」居民：\n\n感谢各位居民对《初音未来：缤纷舞台》的支持。\n我们将于7/23 12:00起举办新成员登场招募活动「Open up my feelings!招募」。\n\n【举办时间】\n7/23 12:00 ～ 7/31 11:59\n \n本次招募会有3名新成员登场，且出现率比同等稀有度的其他成员更高。\n\n必定出现★2及以上成员。\n在“招募10次”中必定会获得1名★3及以上的成员。\n\n此外，消耗付费水晶x1500可享受特惠“招募10次”机会，每人仅限1次。\n \n「Open up my feelings!招募」中登场的新成员\n★4[编织真挚的心愿] 花里实乃理\n★4[Fantastic！训练室] 桐谷遥\n★4[让人安心的早饭] 日野森雫\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-23",
+      "url": "https://www.bilibili.com/opus/1227735301609226242",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1227472449618051091-2",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227472449618051091",
+      "title": "・7/15 20:00 ～ 7/23 14:59",
+      "description": "【「Unsteady, still steady step 后日谈·演唱会」即将举办！】\n#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n我们将于活动结束后举办虚拟演唱会。\n\n■活动时间\n【等待区域开放期间】\n・7/15 20:00 ～ 7/23 14:59 \n\n【演唱会举办期间】\n・7/21 22:00 ～ 7/22 21:00 \n\n【演唱会举办场次】\n・7/21 22:00、23:00\n・7/22 00:00、01:00、02:00、03:00、04:00、05:00、06:00、07:00、08:00、09:00、10:00、11:00\n、12:00、13:00、14:00、15:00、16:00、17:00、18:00、19:00、20:00、21:00 \n\n【演唱会长度】\n ・约7分30秒\n\n■初次参加奖励\n・[表情]穗波：刚才，我……\n・水晶×300\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-23",
+      "url": "https://www.bilibili.com/opus/1227472449618051091",
+      "status": "AUTO_PARSED"
     },
     {
       "id": "event-1227364216444289042-1",
@@ -2104,17 +2059,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1226235498995908612-1",
-      "game": "Rotaeno",
-      "source_dynamic_id": "1226235498995908612",
-      "title": "将于7月23日v2.25更新后，追加至游戏内",
-      "description": "【新驾驶员登场】\n★莫娜 - Show Time☆ -★\n「表演要开始了！大家准备好了吗♪」\n「食指捻着卡片的边缘，然后…这样…？」\n\n解锁方式：购买曲包「幻境迷踪」后，通过限时活动获取。\n将于7月23日v2.25更新后，追加至游戏内。",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-07-23",
-      "url": "https://www.bilibili.com/opus/1226235498995908612",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1225864413842505732-1",
       "game": "Rotaeno",
       "source_dynamic_id": "1225864413842505732",
@@ -2123,17 +2067,6 @@
       "event_type": "PACK_RELEASE",
       "event_date": "2026-07-23",
       "url": "https://www.bilibili.com/opus/1225864413842505732",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1225495905649557520-1",
-      "game": "Rotaeno",
-      "source_dynamic_id": "1225495905649557520",
-      "title": "以下歌曲将于7月23日追加至星际航行S0曲包「ROCK (Y)OUR WORLD」：",
-      "description": "【Rotaeno星际航行S0更新内容追加！】\n以下歌曲将于7月23日追加至星际航行S0曲包「ROCK (Y)OUR WORLD」：\n\n♪ Another One of Those Times by: Poh Hock feat. Debo Ray（航行等级4）\n\nV2.25更新后，玩家可在到达指定航行等级后解锁歌曲。\n其余歌曲和商店内容将于后续版本中逐步登场，敬请期待！\n\n注意事项：因版权问题，航行等级3歌曲「Switch Up!」将于v2.25更换歌曲封面，造成不便敬请见谅。",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-07-23",
-      "url": "https://www.bilibili.com/opus/1225495905649557520",
       "status": "AUTO_PARSED"
     },
     {
@@ -2148,17 +2081,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1225122243512631313-1",
-      "game": "Rotaeno",
-      "source_dynamic_id": "1225122243512631313",
-      "title": "活动时间：7月23日～8月9日",
-      "description": "【Rotaeno限时活动预告】\n参与限时活动，赢取S0航行等级、驾驶员「莫娜 - Show Time☆ -」、限定头像以及航行数据等众多奖励。\n本次的活动玩法为「漫游活动」。\n同时，本次漫游活动将追加特殊挑战任务，记得来看看莫娜为大家准备了哪些有趣的扑克牌任务呦～\n\n*驾驶员「莫娜 - Show Time☆ -」为购买曲包「幻境迷踪」的限定奖励。\n活动时间：7月23日～8月9日",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-07-23",
-      "url": "https://www.bilibili.com/opus/1225122243512631313",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1217700540037726210-1",
       "game": "Rotaeno",
       "source_dynamic_id": "1217700540037726210",
@@ -2167,17 +2089,6 @@
       "event_type": "PACK_RELEASE",
       "event_date": "2026-07-23",
       "url": "https://www.bilibili.com/opus/1217700540037726210",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1216958369681637401-1",
-      "game": "Rotaeno",
-      "source_dynamic_id": "1216958369681637401",
-      "title": "【奇幻主题原创曲包「幻境迷踪」将于7月23日起加入Rotaeno",
-      "description": "【奇幻主题原创曲包「幻境迷踪」将于7月23日起加入Rotaeno！】\n\n▼曲目列表\n♪ Serendipity by: Makou\n♪ Lumina by: Wisp X & Xomu\n♪ Elyqiria by: Connexio\n♪ 至高天海 ペル・オケアノス by: Ayatsugu_Otowa\n♪ Dawn Nymphaea by: 花徒めと\n♪ Stolen Lips by: Osamu Kubota\n\n- 本次曲包原价为600星钻，V2.25推出期间降价为500星钻。",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-07-23",
-      "url": "https://www.bilibili.com/opus/1216958369681637401",
       "status": "AUTO_PARSED"
     },
     {
@@ -2192,14 +2103,14 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1227576467265683457-1",
-      "game": "世界计划日服资讯",
-      "source_dynamic_id": "1227576467265683457",
-      "title": "北京时间7月22日11时起，",
-      "description": "北京时间7月22日11时起，\n『世界服饰招募 vol.5』开启🎉\n\n进行招募将会必得1名常驻★4成员✨\n并且可以获得此前在国际服实装的主题为「EDM庆典」的演出限定服装🌈 \n\n纪念贺图由 PAN:D（X：@pandniconico_） 担任绘制✨ \n\n※需使用「付费水晶×3000」进行招募，仅限1次\n※可招募成员范围：截至『Proof the RED』招募（第199期活动『Show 'em what's up！』）的常驻★4成员\n※限定服装有再登场的可能\n\n#世界计划 多彩舞台#",
+      "id": "event-1227472449618051091-4",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227472449618051091",
+      "title": "・7/21 22:00 ～ 7/22 21:00",
+      "description": "【「Unsteady, still steady step 后日谈·演唱会」即将举办！】\n#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n我们将于活动结束后举办虚拟演唱会。\n\n■活动时间\n【等待区域开放期间】\n・7/15 20:00 ～ 7/23 14:59 \n\n【演唱会举办期间】\n・7/21 22:00 ～ 7/22 21:00 \n\n【演唱会举办场次】\n・7/21 22:00、23:00\n・7/22 00:00、01:00、02:00、03:00、04:00、05:00、06:00、07:00、08:00、09:00、10:00、11:00\n、12:00、13:00、14:00、15:00、16:00、17:00、18:00、19:00、20:00、21:00 \n\n【演唱会长度】\n ・约7分30秒\n\n■初次参加奖励\n・[表情]穗波：刚才，我……\n・水晶×300\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
       "event_type": "EVENT",
       "event_date": "2026-07-22",
-      "url": "https://www.bilibili.com/opus/1227576467265683457",
+      "url": "https://www.bilibili.com/opus/1227472449618051091",
       "status": "AUTO_PARSED"
     },
     {
@@ -2214,6 +2125,28 @@
       "status": "AUTO_PARSED"
     },
     {
+      "id": "event-1227472449618051091-3",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227472449618051091",
+      "title": "・7/21 22:00 ～ 7/22 21:00",
+      "description": "【「Unsteady, still steady step 后日谈·演唱会」即将举办！】\n#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n我们将于活动结束后举办虚拟演唱会。\n\n■活动时间\n【等待区域开放期间】\n・7/15 20:00 ～ 7/23 14:59 \n\n【演唱会举办期间】\n・7/21 22:00 ～ 7/22 21:00 \n\n【演唱会举办场次】\n・7/21 22:00、23:00\n・7/22 00:00、01:00、02:00、03:00、04:00、05:00、06:00、07:00、08:00、09:00、10:00、11:00\n、12:00、13:00、14:00、15:00、16:00、17:00、18:00、19:00、20:00、21:00 \n\n【演唱会长度】\n ・约7分30秒\n\n■初次参加奖励\n・[表情]穗波：刚才，我……\n・水晶×300\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-21",
+      "url": "https://www.bilibili.com/opus/1227472449618051091",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1227410602071162886-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227410602071162886",
+      "title": "7/21 15:00起，追加歌曲《花弁、それにまつわる音声》",
+      "description": "#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n感谢各位居民对《初音未来：缤纷舞台》的支持。\n\n7/21 15:00起，追加歌曲《花弁、それにまつわる音声》！\n可以在现实世界的「音乐商店」兑换追加的歌曲。\n\n■歌曲介绍\n《花弁、それにまつわる音声》\n作词：あばらや\n作曲：あばらや\n编曲：あばらや\n歌手\n虚拟歌手ver.：初音未来（Original CV by 藤田咲）\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-21",
+      "url": "https://www.bilibili.com/opus/1227410602071162886",
+      "status": "AUTO_PARSED"
+    },
+    {
       "id": "event-1227016747121377298-1",
       "game": "世界计划日服资讯",
       "source_dynamic_id": "1227016747121377298",
@@ -2225,14 +2158,47 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1226793043732987909-1",
-      "game": "世界计划日服资讯",
-      "source_dynamic_id": "1226793043732987909",
-      "title": "北京时间7月21日23时起，",
-      "description": "北京时间7月21日23时起，\n💿『白石杏 HAPPY BIRTHDAY 2026 招募』开启✨\n以前的生日限定成员 白石杏 开启复刻招募💫\n\n通过生日招募获得的招募贴纸可以在兑换所中兑换道具「庆典甘霖」🎁\n\n#世界计划 多彩舞台##白石杏诞生祭2026#",
+      "id": "event-1226993131248943110-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1226993131248943110",
+      "title": "今天7/20是Wonderland×Showtime成员「草薙宁宁」的生日",
+      "description": "#初音未来缤纷舞台# #PJSK# #草薙宁宁# #望月穗波# #日野森志步# #花里实乃理# #桃井爱莉# #凤笑梦# \n\n尊敬的各位「世界」居民：\n\n今天7/20是Wonderland×Showtime成员「草薙宁宁」的生日！\n让我们一起来庆祝宁宁的生日吧～\n来看看草薙宁宁与望月穗波、日野森志步、花里实乃理、桃井爱莉、凤笑梦的小故事吧～\n\n第309话「珍贵回忆中的一幕」🪀\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
       "event_type": "EVENT",
-      "event_date": "2026-07-21",
-      "url": "https://www.bilibili.com/opus/1226793043732987909",
+      "event_date": "2026-07-20",
+      "url": "https://www.bilibili.com/opus/1226993131248943110",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1226730279269302295-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1226730279269302295",
+      "title": "我们将于7/20(一)举办「HAPPY BIRTHDAY 演唱会 宁宁 2026」",
+      "description": "【即将举办「HAPPY BIRTHDAY 演唱会 宁宁 2026」！】\n#初音未来缤纷舞台# #PJSK# #草薙宁宁# #MEIKO# #WS# \n \n尊敬的各位「世界」居民：\n\n我们将于7/20(一)举办「HAPPY BIRTHDAY 演唱会 宁宁 2026」。\n将会由Wonderlands×Showtime与MEIKO共同为大家带来精彩演出✨\n \n【场次及开放时间】\n7/20\n00:00、01:00、02:00、03:00、04:00、05:00、06:00、07:00、08:00、09:00、10:00、11:00\n12:00、13:00、14:00、15:00、16:00、17:00、18:00、19:00、20:00、21:00、22:00、23:00\n \n欢迎各位居民前往观看，一起庆祝宁宁的生日吧！\n祝愿各位居民度过美好的时光～💗\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-20",
+      "url": "https://www.bilibili.com/opus/1226730279269302295",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1226622046103928834-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1226622046103928834",
+      "title": "7/20 00:00 起将举办「[草薙宁宁] HAPPY BIRTHDAY 2026 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY 2025 招",
+      "description": "#初音未来缤纷舞台# #PJSK# #草薙宁宁# \n\n尊敬的各位「世界」居民：\n\n7/20 00:00 起将举办「[草薙宁宁] HAPPY BIRTHDAY 2026 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY 2025 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY Stamp 招募」、「[复刻][草薙宁宁] HAPPY BIRTHDAY Flower招募」。\n本招募中会出现稀有度[生日]、[★3]、[★2]的「草薙宁宁」～🎂\n快去《初音未来：缤纷舞台》与喜爱的成员相遇吧💕\n\n【举办时间】\n7/20 00:00 ～ 7/26 23:59\n\n「[草薙宁宁]HAPPY BIRTHDAY 2026招募」中登场的新成员👇\n🎂[生日]／[Happy Birthday!!2026] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY 2025招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!2025] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY Stamp招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!Stamp] 草薙宁宁\n\n「[复刻][草薙宁宁] HAPPY BIRTHDAY Flower招募」中登场的[复刻]成员👇\n🎂[生日]／[Happy Birthday!!Flower] 草薙宁宁\n\n今后也请多多支持《初音未来：缤纷舞台》！\n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-20",
+      "url": "https://www.bilibili.com/opus/1226622046103928834",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1226668431706685458-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1226668431706685458",
+      "title": "7/19 15:00起，将追加歌曲《マリオネットダンサー》",
+      "description": "#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n感谢各位居民对《初音未来：缤纷舞台》的支持。\n\n7/19 15:00起，将追加歌曲《マリオネットダンサー》！\n可以在现实世界的「音乐商店」兑换追加的歌曲。\n\n■歌曲介绍\n《マリオネットダンサー》\n作词：ひらぎ\n作曲：ひらぎ\n编曲：ひらぎ\n歌手\n虚拟歌手ver.：初音未来（Original CV by 藤田咲）\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-19",
+      "url": "https://www.bilibili.com/opus/1226668431706685458",
       "status": "AUTO_PARSED"
     },
     {
@@ -2247,14 +2213,25 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223048455012745224-2",
-      "game": "Bleap 闪音跃动",
-      "source_dynamic_id": "1223048455012745224",
-      "title": "2026年6月18日14:00~2026年7月19日00:00 (UTC+8)",
-      "description": "✦活动时间\n2026年6月18日14:00~2026年7月19日00:00 (UTC+8) \n✦活动说明\n· 活动期间，「闪音无限卡」将开启限时优惠，折扣价为150RMB\n· 购入即可获取全部曲包歌曲以及永久曲包歌曲更新权益，并获得赠送的11280晶石\n· 每个赛季期间，每周可额外领取3200结晶碎片\n· 注意：\n  极个别特殊曲包可能因联动方需求或其他不可抗力因素无法纳入无限卡权益\n  不同地区的折扣价格与截止时间可能有差异，具体请以游戏内显示为准 \n#闪音跃动##Bleap#",
-      "event_type": "COLLABORATION",
-      "event_date": "2026-07-19",
-      "url": "https://www.bilibili.com/opus/1223048455012745224",
+      "id": "event-1225573964550504452-1",
+      "game": "maimai 日服资讯",
+      "source_dynamic_id": "1225573964550504452",
+      "title": "【7/17(金)「マサラダちほー」登場",
+      "description": "【7/17(金)「マサラダちほー」登場！】\n大人気ボカロPのマサラダさんとのコラボちほーが登場！\n「イレギュラーマン」「ちっちゃな私」の2曲が収録されます🎶\n\nちほーを進めるとMVの色んなシーンをモチーフにしたコレクションもゲットできちゃいます！\n\n⬇️詳しくはコチラ\ninfo-maimai.sega.jp/9118/",
+      "event_type": "EVENT",
+      "event_date": "2026-07-17",
+      "url": "https://www.bilibili.com/opus/1225573964550504452",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1225492609249574935-1",
+      "game": "maimai 日服资讯",
+      "source_dynamic_id": "1225492609249574935",
+      "title": "【7/17(金)「ゲーム&バラエティ」楽曲追加",
+      "description": "【7/17(金)「ゲーム&バラエティ」楽曲追加！】\nlowiroが贈る新作リズムゲーム『In Falsus』の楽曲\n「Cryogenic / Camellia feat. Petra Gurin」が\n『maimai でらっくす』に登場！\n\n⬇️詳しくはコチラ！\ninfo-maimai.sega.jp/9413/",
+      "event_type": "EVENT",
+      "event_date": "2026-07-17",
+      "url": "https://www.bilibili.com/opus/1225492609249574935",
       "status": "AUTO_PARSED"
     },
     {
@@ -2269,17 +2246,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223653364679573505-1",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223653364679573505",
-      "title": "7月17日 更新后 ~ 8月23日11:59，游戏内部分付费内容将开启限时折扣",
-      "description": "【特别折扣活动开启！】\n\n夏日炎炎，自然少不了折扣活动！\n7月17日 更新后 ~ 8月23日11:59，游戏内部分付费内容将开启限时折扣！\n\n详细信息请参考下方图片哦！",
-      "event_type": "EVENT",
-      "event_date": "2026-07-17",
-      "url": "https://www.bilibili.com/opus/1223653364679573505",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1223290010456817705-1",
       "game": "范式：起源",
       "source_dynamic_id": "1223290010456817705",
@@ -2288,17 +2254,6 @@
       "event_type": "VERSION_UPDATE",
       "event_date": "2026-07-17",
       "url": "https://www.bilibili.com/opus/1223290010456817705",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1223282279477936193-1",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223282279477936193",
-      "title": "复刻期间为【7月17日 更新后 ~ 9月20日23:59】",
-      "description": "《范式：起源》 v4.9 更新\n\n晚风拂过，她以熟悉的姿态再次驻足于此……\n\n4.9版本更新后，限定皮肤【Para - 暮夜之宴】将限时复刻！\n复刻期间为【7月17日 更新后 ~ 9月20日23:59】！",
-      "event_type": "VERSION_UPDATE",
-      "event_date": "2026-07-17",
-      "url": "https://www.bilibili.com/opus/1223282279477936193",
       "status": "AUTO_PARSED"
     },
     {
@@ -2324,25 +2279,14 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1222313337043288065-1",
-      "game": "Bleap 闪音跃动",
-      "source_dynamic_id": "1222313337043288065",
-      "title": "闪音跃动预计于2026年7月17日12:00(UTC+8)进行更新停服维护，预计1小时完成维护，具体时间将根据实际维护进度提前或延后",
-      "description": "亲爱的闪动人们：\n\n闪音跃动预计于2026年7月17日12:00(UTC+8)进行更新停服维护，预计1小时完成维护，具体时间将根据实际维护进度提前或延后。维护期间无法登录游戏，请注意合理安排游戏时间。\n\n【补...\n\n全文",
-      "event_type": "MAINTENANCE",
+      "id": "event-1220072193025638403-1",
+      "game": "maimai 日服资讯",
+      "source_dynamic_id": "1220072193025638403",
+      "title": "【7/17(金)「niconico」楽曲追加",
+      "description": "【7/17(金)「niconico」楽曲追加！】\n7/17(金)には「2代目閻魔」「シスターに懺悔を」の2曲もすぐに遊べる新曲として追加！\nniconicoカテゴリの新曲をまとめて遊んでみてね！🎧\n\n⬇️詳しくはコチラ！\ninfo-maimai.sega.jp/9118/",
+      "event_type": "SONG_ADD",
       "event_date": "2026-07-17",
-      "url": "https://www.bilibili.com/opus/1222313337043288065",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1215497221767692293-1",
-      "game": "范式：起源",
-      "source_dynamic_id": "1215497221767692293",
-      "title": "7月17日，4.9版本更新后，MEGAREX联动第二弹特别挑战【MEGA 175",
-      "description": "《范式：起源》 v4.9 更新\n\n【特别挑战常驻开放公告】\n\n7月17日，4.9版本更新后，MEGAREX联动第二弹特别挑战【MEGA 175?】将改为常驻开放！\n购买联动专辑《未来磁场》Vol.3 & Vol.4后，即可无限期体验！",
-      "event_type": "COLLABORATION",
-      "event_date": "2026-07-17",
-      "url": "https://www.bilibili.com/opus/1215497221767692293",
+      "url": "https://www.bilibili.com/opus/1220072193025638403",
       "status": "AUTO_PARSED"
     },
     {
@@ -2357,17 +2301,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1214097921411121152-1",
-      "game": "范式：起源",
-      "source_dynamic_id": "1214097921411121152",
-      "title": "7月17日，《范式：起源》× Bleap闪音跃动 联动来袭",
-      "description": "《范式：起源》 v4.9 更新\n\n你好，跃动之城！\n\n7月17日，《范式：起源》× Bleap闪音跃动 联动来袭！@Bleap闪音跃动\n1首联动曲目将于单曲专辑《混沌信号》登场：\n\n- “Trick or treat” by Shiroi-Ice/HanamaRuri/ariiol（使用活性结晶兑换）",
-      "event_type": "COLLABORATION",
-      "event_date": "2026-07-17",
-      "url": "https://www.bilibili.com/opus/1214097921411121152",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1224503768229347332-1",
       "game": "Lanota",
       "source_dynamic_id": "1224503768229347332",
@@ -2379,6 +2312,17 @@
       "status": "AUTO_PARSED"
     },
     {
+      "id": "event-1227472449618051091-1",
+      "game": "世界计划国服",
+      "source_dynamic_id": "1227472449618051091",
+      "title": "・7/15 20:00 ～ 7/23 14:59",
+      "description": "【「Unsteady, still steady step 后日谈·演唱会」即将举办！】\n#初音未来缤纷舞台# #PJSK# \n\n尊敬的各位「世界」居民：\n\n我们将于活动结束后举办虚拟演唱会。\n\n■活动时间\n【等待区域开放期间】\n・7/15 20:00 ～ 7/23 14:59 \n\n【演唱会举办期间】\n・7/21 22:00 ～ 7/22 21:00 \n\n【演唱会举办场次】\n・7/21 22:00、23:00\n・7/22 00:00、01:00、02:00、03:00、04:00、05:00、06:00、07:00、08:00、09:00、10:00、11:00\n、12:00、13:00、14:00、15:00、16:00、17:00、18:00、19:00、20:00、21:00 \n\n【演唱会长度】\n ・约7分30秒\n\n■初次参加奖励\n・[表情]穗波：刚才，我……\n・水晶×300\n\n今后也请多多支持《初音未来：缤纷舞台》！ \n\n立即前往「世界」>>>网页链接",
+      "event_type": "EVENT",
+      "event_date": "2026-07-15",
+      "url": "https://www.bilibili.com/opus/1227472449618051091",
+      "status": "AUTO_PARSED"
+    },
+    {
       "id": "event-1222880285592387622-1",
       "game": "舞萌DX 国服",
       "source_dynamic_id": "1222880285592387622",
@@ -2387,17 +2331,6 @@
       "event_type": "COLLABORATION",
       "event_date": "2026-07-15",
       "url": "https://www.bilibili.com/opus/1222880285592387622",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1222153461194293250-1",
-      "game": "舞萌DX 国服",
-      "source_dynamic_id": "1222153461194293250",
-      "title": "该问题已于7月15日11:40修正",
-      "description": "各位玩家：\n今日更新追加的中二舞萌联动乐曲 「Tidal Wave」，在上线后出现了部分玩家无法正常获取的情况。\n该问题已于7月15日11:40修正。目前，玩家已可正常获取并游玩该乐曲。\n部分在7月15日 11:40前满足条件并进行游玩、但未能正常获得乐曲的玩家账号也已完成乐曲补发。请留意乐曲发放情况。\n由此给各位玩家带来的不便，我们深表歉意。感谢大家的理解与支持。",
-      "event_type": "COLLABORATION",
-      "event_date": "2026-07-15",
-      "url": "https://www.bilibili.com/opus/1222153461194293250",
       "status": "AUTO_PARSED"
     },
     {
@@ -2424,17 +2357,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1222198635603689527-1",
-      "game": "Muse Dash",
-      "source_dynamic_id": "1222198635603689527",
-      "title": "Muse Dash iOS 端预定将于 7 月 14 日 2:00～6:00（UTC+8） 进行游戏维护，期间将暂停使用 Apple 注册与登录",
-      "description": "Muse Dash iOS 端预定将于 7 月 14 日 2:00～6:00（UTC+8） 进行游戏维护，期间将暂停使用 Apple 注册与登录。\n游戏维护结束后我们会再次通知大家，届时全部功能即可恢复使用。为了尽量不影响游玩，建议小伙伴们最好在游戏维护开始前保持登录游戏账号哦！\n为此带来不便深表歉意，如遇到任何游戏问题可以到官方客服网站进行反馈，我们将尽力帮助解决问题 ( •̀ ω •́ )✧",
-      "event_type": "MAINTENANCE",
-      "event_date": "2026-07-14",
-      "url": "https://www.bilibili.com/opus/1222198635603689527",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1220792888523227145-1",
       "game": "Muse Dash",
       "source_dynamic_id": "1220792888523227145",
@@ -2443,17 +2365,6 @@
       "event_type": "VERSION_UPDATE",
       "event_date": "2026-07-14",
       "url": "https://www.bilibili.com/opus/1220792888523227145",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1220787700217413650-1",
-      "game": "Muse Dash",
-      "source_dynamic_id": "1220787700217413650",
-      "title": "从 2026 年 7 月 14 日起，Muse Dash 的发行主体将从 hasuhasu 变更为 peropero",
-      "description": "从 2026 年 7 月 14 日起，Muse Dash 的发行主体将从 hasuhasu 变更为 peropero。本次变更仅为企业内部正常的结构优化，游戏的研发和运营不会受到影响。\n7 月的更新版本 v6.5 即将到来，可以多多期待接下来的情报公开哦 ( •̀ ω •́ )✧\n \n此外，我们将会在 8 月底上线的 v6.6 版本中更新「第三方登录系统」。调整说明如下：\n1. 曾使用 TapTap/微信/QQ 注册的游戏账号，原第三方登录授权即将过期，需要重新授权才可以继续使用第三方登录。未授权时亦可正常使用绑定的手机号/邮箱登录。\n2. 如需使用第三方登录，届时更新至 v6.6 版本，进入游戏设置「帐号系统」，根据指示完成授权绑定即可。\n3. 若第三方授权过期且未曾绑定过手机号/邮箱，有可能无法自主登回游戏帐号，请联系客服帮助。\n为了存档数据安全，建议大家保持帐号登录，未绑定过手机号/邮箱的游戏帐号请尽快上线完成绑定哦！\n\n感谢大家一直以来对 Muse Dash 的支持，如遇到任何游戏问题可以到官方客服网站进行反馈，我们将尽力帮助解决问题 (≧∀≦)ゞ",
-      "event_type": "VERSION_UPDATE",
-      "event_date": "2026-07-14",
-      "url": "https://www.bilibili.com/opus/1220787700217413650",
       "status": "AUTO_PARSED"
     },
     {
@@ -2468,17 +2379,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223375050814521385-2",
-      "game": "范式：起源",
-      "source_dynamic_id": "1223375050814521385",
-      "title": "7月11日（本周六）晚18:00，赛事门票将于【bilibili会员购】独家开售",
-      "description": "🌱♻【重大发表】COP 2026 决赛正式定档！♻🌱\n\n《范式：起源》官方赛事【Champions of Paradigm 2026】线下总决赛现已正式定档【8月22日 / 杭州】！\n\n7月11日（本周六）晚18:00，赛事门票将于【bilibili会员购】独家开售！\n点击以下购票链接，进入页面后点击【设置提醒】，不错过售票时间！\n网页链接\n\n🌱活动时间\n8月22日（全天）\n\n🌱活动地点\n杭州市 拱墅区 拱宸桥街道 小河公园一号仓库 CH8 Livehouse\n\n🌱活动内容\n赛前预热・赛事本体・周边贩售・更新爆料・更多神秘内容……\n\n🌱现场演出\nDJ Set：Supa7onyz・DJ MossyStone・Salty Salt @Supa7onyz @苔石_ @咸盐_SaltySalt\n交响乐演出：和音社交响乐团  @和音社交响乐团\n\n🌱票务权益\n本次门票将分为【INF+】【INF】两档。\n各档位价格 / 权益 / 详细场地布局 / 观赛区域指引，请点击下方 P8 长图查看详细👇\n\n🌱注意事项\n・活动入场时间为【INF+档：08：30】/【INF档：09：30】。\n・购票观众【不限制场内进出次数】，重复入场时需出示【COP2026 限定手环】。\n・【INF+】档观众需要凭对应档位的【COP2026 限定手环】进入专属观赛区域。\n・其余活动须知请参照对应售票页面。\n\n\n活动当日时间表、赛制赛程、周边场贩信息等更多内容，还请持续关注官方播报！\n8月22日，我们不见不散！",
-      "event_type": "EVENT",
-      "event_date": "2026-07-11",
-      "url": "https://www.bilibili.com/opus/1223375050814521385",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1220035256302698499-1",
       "game": "maimai 日服资讯",
       "source_dynamic_id": "1220035256302698499",
@@ -2487,17 +2387,6 @@
       "event_type": "EVENT",
       "event_date": "2026-07-11",
       "url": "https://www.bilibili.com/opus/1220035256302698499",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1220032129605304320-1",
-      "game": "maimai 日服资讯",
-      "source_dynamic_id": "1220032129605304320",
-      "title": "本日、7月11日はmaimai稼働記念日🎉",
-      "description": "本日、7月11日はmaimai稼働記念日🎉\n今年で『maimai』シリーズは14周年、\n『maimai でらっくす』は7周年を迎えることができました！\n\nmaimaiの輪(サークル)をもっともっと広げていけるように頑張って参りますので、今後とも応援をよろしくお願いします！🌐（maimaiチーム一同）\n#祝maimai14周年",
-      "event_type": "EVENT",
-      "event_date": "2026-07-11",
-      "url": "https://www.bilibili.com/opus/1220032129605304320",
       "status": "AUTO_PARSED"
     },
     {
@@ -2600,17 +2489,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1218906611939016736-1",
-      "game": "Phigros",
-      "source_dynamic_id": "1218906611939016736",
-      "title": "【直播回放】PMT 2026 决赛 2026年06月28日16点场",
-      "description": "直播回放\n41:27\n【直播回放】PMT 2026 决赛 2026年06月28日16点场\n7774\n9508",
-      "event_type": "EVENT",
-      "event_date": "2026-06-28",
-      "url": "https://www.bilibili.com/opus/1218906611939016736",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1218894062031994880-1",
       "game": "Phigros",
       "source_dynamic_id": "1218894062031994880",
@@ -2644,17 +2522,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223359588939595840-1",
-      "game": "Muse Dash",
-      "source_dynamic_id": "1223359588939595840",
-      "title": "⭐ 活动时间：6 月 26 日 ~ 7 月 31 日 17:00",
-      "description": "😽【转发抽奖】😽\n┈┈┈┈┈ ▽ 抽奖奖品 ▽ ┈┈┈┈┈\n▽ 小幽灵给你看看我的猫盲盒一套（1位）\n▽ 扭蛋 窥探鬼怪的猫咪摆件一套（1位）\n\n== Muse Dash 八周年同人征集计划 start！==\n这次制作组联合喵斯广播公司 PBS \n为庆祝喵斯快跑与小伙伴们走过的第八年，\n我们在此向各位跃跃欲试的小伙伴们征集——\n美味可口的同人作品！ (*ˇωˇ*人)\n无论是凛、布若和玛莉嘉的周年庆美图，还是三人组的未公开花絮，统统都要！\n优秀作品会在最终放送上展示\n还有专属奖励哦~\n\n【PBS 喵斯异闻录】幽灵玛莉嘉照片收集中！\n(゜ロ゜;)┛ 务必小心！并尽量留下ta的照▅片發▅送至▅▅\n⭐ 活动时间：6 月 26 日 ~ 7 月 31 日 17:00\n⭐ 参与方式：活动期间填写报名表使用定活动标签发布你的作品，详情请查看附图及评论置顶~",
-      "event_type": "EVENT",
-      "event_date": "2026-06-26",
-      "url": "https://www.bilibili.com/opus/1223359588939595840",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1216912241695129622-1",
       "game": "Arcaea",
       "source_dynamic_id": "1216912241695129622",
@@ -2663,17 +2530,6 @@
       "event_type": "SONG_ADD",
       "event_date": "2026-06-25",
       "url": "https://www.bilibili.com/opus/1216912241695129622",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1216911984017014839-1",
-      "game": "Arcaea",
-      "source_dynamic_id": "1216911984017014839",
-      "title": "6月25日，全新原创单曲「Sucromania」by STEAKA将加入回忆档案馆",
-      "description": "糖果，糖果…\n溶化，溶化…\n是色彩与甜蜜的诱惑。\n\n6月25日，全新原创单曲「Sucromania」by STEAKA将加入回忆档案馆。\n#韵律源点# #arcaea# #音游#",
-      "event_type": "SONG_ADD",
-      "event_date": "2026-06-25",
-      "url": "https://www.bilibili.com/opus/1216911984017014839",
       "status": "AUTO_PARSED"
     },
     {
@@ -2699,17 +2555,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1206521856855638019-1",
-      "game": "Arcaea",
-      "source_dynamic_id": "1206521856855638019",
-      "title": "《Arcaea Next Stage》和《UNDERTALE》曲包将归属于这一新类别，而首个新加入的曲包是将于6月25日上线的《Virtual Singers》",
-      "description": "v6.15版本起，曲包选择菜单将新增一个类别——“综合”，其中的歌曲种类将进一步丰富！\n\n《Arcaea Next Stage》和《UNDERTALE》曲包将归属于这一新类别，而首个新加入的曲包是将于6月25日上线的《Virtual Singers》。\n#韵律源点# #arcaea# #音游#",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-06-25",
-      "url": "https://www.bilibili.com/opus/1206521856855638019",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1206150771681263635-1",
       "game": "Arcaea",
       "source_dynamic_id": "1206150771681263635",
@@ -2718,17 +2563,6 @@
       "event_type": "PACK_RELEASE",
       "event_date": "2026-06-25",
       "url": "https://www.bilibili.com/opus/1206150771681263635",
-      "status": "AUTO_PARSED"
-    },
-    {
-      "id": "event-1205779686496403461-1",
-      "game": "Arcaea",
-      "source_dynamic_id": "1205779686496403461",
-      "title": "《Virtual Singers》曲包将自6月25日起开放获取",
-      "description": "Arcaea v6.15版本将迎来全新“综合”类别曲包，涵盖一对熟悉面孔所歌唱的五首新曲！\n\n《Virtual Singers》曲包将自6月25日起开放获取。\n\n来自四面八方的梦想，自数字的舞台上汇聚！\n#韵律源点# #arcaea# #音游#",
-      "event_type": "PACK_RELEASE",
-      "event_date": "2026-06-25",
-      "url": "https://www.bilibili.com/opus/1205779686496403461",
       "status": "AUTO_PARSED"
     },
     {
@@ -2743,17 +2577,6 @@
       "status": "AUTO_PARSED"
     },
     {
-      "id": "event-1223048455012745224-1",
-      "game": "Bleap 闪音跃动",
-      "source_dynamic_id": "1223048455012745224",
-      "title": "2026年6月18日14:00~2026年7月19日00:00 (UTC+8)",
-      "description": "✦活动时间\n2026年6月18日14:00~2026年7月19日00:00 (UTC+8) \n✦活动说明\n· 活动期间，「闪音无限卡」将开启限时优惠，折扣价为150RMB\n· 购入即可获取全部曲包歌曲以及永久曲包歌曲更新权益，并获得赠送的11280晶石\n· 每个赛季期间，每周可额外领取3200结晶碎片\n· 注意：\n  极个别特殊曲包可能因联动方需求或其他不可抗力因素无法纳入无限卡权益\n  不同地区的折扣价格与截止时间可能有差异，具体请以游戏内显示为准 \n#闪音跃动##Bleap#",
-      "event_type": "COLLABORATION",
-      "event_date": "2026-06-18",
-      "url": "https://www.bilibili.com/opus/1223048455012745224",
-      "status": "AUTO_PARSED"
-    },
-    {
       "id": "event-1184497983949897733-1",
       "game": "Milthm",
       "source_dynamic_id": "1184497983949897733",
@@ -2762,6 +2585,17 @@
       "event_type": "COLLABORATION",
       "event_date": "2026-04-17",
       "url": "https://www.bilibili.com/opus/1184497983949897733",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "event-1220777454604386311-1",
+      "game": "Muse Dash",
+      "source_dynamic_id": "1220777454604386311",
+      "title": "展会现场，我们为大家带来LIMEPIE系列新作【Muse Dash 凛 摩托车手Ver.】1/8比例手办的彩色原型展示",
+      "description": "#MuseDash# #LIMEPIE##APEX-TOYS#\n〓原型公开〓\n出自热门游戏《Muse Dash》中的「凛」手办化登场。\n\n本次#BW2026#展会现场，我们为大家带来LIMEPIE系列新作【Muse Dash 凛 摩托车手Ver.】1/8比例手办的彩色原型展示！\n\n欢迎到场玩家前往【2.1H 2A19】参观！后续产品进度欢迎玩家们持续关注，也请期待今后更多情报解锁。\n@MuseDash_喵斯快跑",
+      "event_type": "EVENT",
+      "event_date": "2026-01-08",
+      "url": "https://www.bilibili.com/opus/1220777454604386311",
       "status": "AUTO_PARSED"
     },
     {
