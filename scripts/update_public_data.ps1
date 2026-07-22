@@ -10,6 +10,10 @@ $gitCandidates = @(
     (Join-Path $env:ProgramFiles 'Git\cmd\git.exe')
 )
 $git = $gitCandidates | Where-Object { Test-Path -LiteralPath $_ } | Select-Object -First 1
+$gitRoot = if ($git) { Split-Path -Parent (Split-Path -Parent $git) } else { $null }
+$gitCaBundle = if ($gitRoot) {
+    Join-Path $gitRoot 'mingw64\etc\ssl\certs\ca-bundle.crt'
+} else { $null }
 $snapshot = Join-Path $projectRoot 'frontend\public\data\snapshot.json'
 $logs = Join-Path $projectRoot 'data\logs'
 $log = Join-Path $logs 'local-updater.log'
@@ -50,6 +54,25 @@ function Invoke-GitPush([int]$TimeoutSeconds = 45) {
             -c "http.lowSpeedTime=$TimeoutSeconds" `
             push origin main 2>&1)
         $exitCode = $LASTEXITCODE
+
+        $combinedOutput = $output -join "`n"
+        if (
+            $exitCode -ne 0 -and
+            $gitCaBundle -and
+            (Test-Path -LiteralPath $gitCaBundle) -and
+            $combinedOutput -match 'CRYPT_E_NO_REVOCATION_CHECK|schannel:.*(?:handshake|InitializeSecurityContext)'
+        ) {
+            $output += 'Schannel failed; retrying immediately with Git OpenSSL and bundled CA certificates'
+            $opensslOutput = @(& $git `
+                -c http.sslBackend=openssl `
+                -c "http.sslCAInfo=$gitCaBundle" `
+                -c http.version=HTTP/1.1 `
+                -c http.lowSpeedLimit=1 `
+                -c "http.lowSpeedTime=$TimeoutSeconds" `
+                push origin main 2>&1)
+            $exitCode = $LASTEXITCODE
+            $output += $opensslOutput
+        }
     }
     finally {
         $ErrorActionPreference = $previousErrorActionPreference
