@@ -4,6 +4,14 @@ import { api } from '../api/client'
 import type { DynamicItem, EventItem, FetchStatus, Game, StaticSnapshot } from '../types'
 
 const staticDataUrl = import.meta.env.VITE_STATIC_DATA_URL as string | undefined
+const eventLabels: Record<EventItem['event_type'], string> = {
+  VERSION_UPDATE: '版本', PACK_RELEASE: '曲包', SONG_ADD: '新曲',
+  COLLABORATION: '联动', EVENT: '活动', MAINTENANCE: '维护',
+}
+const eventColors: Record<EventItem['event_type'], string> = {
+  VERSION_UPDATE: '#3f8cff', PACK_RELEASE: '#7457ff', SONG_ADD: '#db5cff',
+  COLLABORATION: '#ff7a45', EVENT: '#20bfa9', MAINTENANCE: '#7b8194',
+}
 
 export const useCalendarStore = defineStore('calendar', () => {
   const games = ref<Game[]>([])
@@ -27,11 +35,11 @@ export const useCalendarStore = defineStore('calendar', () => {
     }
     return events.value.map((item) => ({
       id: item.id,
-      title: item.title.slice(0, 30),
+      title: `[${eventLabels[item.event_type]}] ${item.title.slice(0, 26)}`,
       start: item.event_date,
       allDay: true,
-      backgroundColor: '#7457ff',
-      borderColor: '#8e7aff',
+      backgroundColor: eventColors[item.event_type],
+      borderColor: eventColors[item.event_type],
       extendedProps: item,
     }))
   })

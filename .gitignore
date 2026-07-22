@@ -16,3 +16,4 @@ frontend/*.tsbuildinfo
 frontend/src/**/*.js
 frontend/vite.config.js
 frontend/vite.config.d.ts
+netlify-deploy.zip

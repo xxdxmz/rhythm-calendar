@@ -7,10 +7,11 @@ import zhCnLocale from '@fullcalendar/core/locales/zh-cn'
 import type { CalendarOptions, EventClickArg } from '@fullcalendar/core'
 import { Refresh, Calendar, Connection, TopRight } from '@element-plus/icons-vue'
 import { useCalendarStore } from './stores/calendar'
-import type { DynamicItem } from './types'
+import type { DynamicItem, EventItem } from './types'
 
 const store = useCalendarStore()
 const selected = ref<DynamicItem | null>(null)
+const selectedEvent = ref<EventItem | null>(null)
 const detailOpen = ref(false)
 
 const statusText = computed(() => {
@@ -47,12 +48,21 @@ const calendarOptions = computed<CalendarOptions>(() => ({
 function openEvent(arg: EventClickArg) {
   const sourceId = String(arg.event.extendedProps.source_dynamic_id || arg.event.id)
   selected.value = store.dynamics.find((item) => item.dynamic_id === sourceId) || null
+  selectedEvent.value = store.events.find((item) => item.id === arg.event.id) || null
   detailOpen.value = true
 }
 
 function openDynamic(item: DynamicItem) {
   selected.value = item
+  selectedEvent.value = null
   detailOpen.value = true
+}
+
+function eventTypeLabel(type: EventItem['event_type']) {
+  return {
+    VERSION_UPDATE: '版本更新', PACK_RELEASE: '曲包发布', SONG_ADD: '新曲追加',
+    COLLABORATION: '联动', EVENT: '限时活动', MAINTENANCE: '维护',
+  }[type]
 }
 
 function formatDate(value: string) {
@@ -123,7 +133,11 @@ onMounted(store.load)
     <el-drawer v-model="detailOpen" size="min(520px, 92vw)" direction="rtl" class="detail-drawer">
       <template #header><span class="drawer-label">ARCAEA · 官方动态</span></template>
       <template v-if="selected">
-        <p class="detail-date">{{ formatDate(selected.publish_time) }}</p>
+        <div v-if="selectedEvent" class="event-summary">
+          <span>{{ eventTypeLabel(selectedEvent.event_type) }}</span>
+          <b>{{ formatDate(selectedEvent.event_date) }}<template v-if="selectedEvent.event_end_date"> — {{ formatDate(selectedEvent.event_end_date) }}</template></b>
+        </div>
+        <p class="detail-date">公告发布于 {{ formatDate(selected.publish_time) }}</p>
         <h2>{{ selected.text.split('\n').find(Boolean) }}</h2>
         <div class="detail-content">{{ selected.text }}</div>
         <a class="source-link" :href="selected.url" target="_blank" rel="noreferrer">在 Bilibili 查看原动态 <el-icon><TopRight /></el-icon></a>

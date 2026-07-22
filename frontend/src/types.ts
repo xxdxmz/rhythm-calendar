@@ -24,6 +24,7 @@ export interface EventItem {
   description: string
   event_type: 'VERSION_UPDATE' | 'PACK_RELEASE' | 'SONG_ADD' | 'COLLABORATION' | 'EVENT' | 'MAINTENANCE'
   event_date: string
+  event_end_date?: string
   url: string
   status: 'AUTO_PARSED' | 'REVIEWED'
 }

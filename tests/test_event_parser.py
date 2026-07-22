@@ -44,3 +44,20 @@ def test_results_are_sorted_by_event_date() -> None:
         "2026-06-28",
         "2026-06-25",
     ]
+
+
+def test_extracts_multiple_independent_dates() -> None:
+    item = dynamic("6月25日新曲上线。7月2日追加高难度谱面。")
+    events = parse_arcaea_events([item])
+    assert [event["event_date"] for event in events] == [
+        "2026-07-02",
+        "2026-06-25",
+    ]
+
+
+def test_activity_range_is_one_event_with_end_date() -> None:
+    item = dynamic("限时地图活动时间为5月28日08:00至6月18日23:00。")
+    events = parse_arcaea_events([item])
+    assert len(events) == 1
+    assert events[0]["event_date"] == "2026-05-28"
+    assert events[0]["event_end_date"] == "2026-06-18"

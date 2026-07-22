@@ -28,10 +28,7 @@ def _publication_date(value: str | datetime) -> date:
     return datetime.fromisoformat(value.replace("Z", "+00:00")).date()
 
 
-def _extract_date(text: str, published: date) -> date | None:
-    match = DATE_PATTERN.search(text)
-    if not match:
-        return None
+def _date_from_match(match: re.Match[str], published: date) -> date | None:
     year = int(match.group("year")) if match.group("year") else published.year
     month = int(match.group("month"))
     day = int(match.group("day"))
@@ -48,6 +45,15 @@ def _extract_date(text: str, published: date) -> date | None:
         elif published.month == 1 and month == 12:
             candidate = candidate.replace(year=year - 1)
     return candidate
+
+
+def _extract_dates(text: str, published: date) -> list[tuple[re.Match[str], date]]:
+    results: list[tuple[re.Match[str], date]] = []
+    for match in DATE_PATTERN.finditer(text):
+        candidate = _date_from_match(match, published)
+        if candidate is not None:
+            results.append((match, candidate))
+    return results
 
 
 def _event_type(text: str) -> str:
@@ -71,33 +77,94 @@ def _title(text: str, event_type: str) -> str:
     }.get(event_type, "Arcaea 活动")
 
 
-def parse_arcaea_event(dynamic: dict) -> dict | None:
-    text = str(dynamic.get("text", "")).strip()
-    if not text:
-        return None
-    published = _publication_date(dynamic["publish_time"])
-    event_date = _extract_date(text, published)
-    if event_date is None:
-        return None
-    event_type = _event_type(text)
+def _sentence_at(text: str, position: int) -> str:
+    boundaries = "\n。！？!?#"
+    start = max((text.rfind(char, 0, position) for char in boundaries), default=-1) + 1
+    ends = [text.find(char, position) for char in boundaries]
+    valid_ends = [end for end in ends if end >= 0]
+    end = min(valid_ends) if valid_ends else len(text)
+    return text[start:end].strip()
+
+
+def _build_event(
+    dynamic: dict,
+    *,
+    event_date: date,
+    event_type: str,
+    title: str,
+    index: int,
+    event_end_date: date | None = None,
+) -> dict:
     dynamic_id = str(dynamic["dynamic_id"])
-    return {
-        "id": f"arcaea-{dynamic_id}",
+    event = {
+        "id": f"arcaea-{dynamic_id}-{index}",
         "game": "Arcaea",
         "source_dynamic_id": dynamic_id,
-        "title": _title(text, event_type),
-        "description": text,
+        "title": title,
+        "description": str(dynamic.get("text", "")).strip(),
         "event_type": event_type,
         "event_date": event_date.isoformat(),
         "url": dynamic.get("url", ""),
         "status": "AUTO_PARSED",
     }
+    if event_end_date and event_end_date > event_date:
+        event["event_end_date"] = event_end_date.isoformat()
+    return event
+
+
+def _parse_dynamic_events(dynamic: dict) -> list[dict]:
+    text = str(dynamic.get("text", "")).strip()
+    if not text:
+        return []
+    published = _publication_date(dynamic["publish_time"])
+    matches = _extract_dates(text, published)
+    if not matches:
+        return []
+
+    event_type = _event_type(text)
+    # A “start 至 end” range is one event. Repeated mentions of its start date
+    # are collapsed, so an activity announcement does not create three cards.
+    range_pair: tuple[date, date] | None = None
+    for current, following in zip(matches, matches[1:]):
+        separator = text[current[0].end() : following[0].start()]
+        if re.search(r"(?:至|到|—|-)", separator):
+            range_pair = (current[1], following[1])
+            break
+
+    unique_dates: list[tuple[re.Match[str], date]] = []
+    seen: set[date] = set()
+    for match, candidate in matches:
+        if candidate not in seen:
+            unique_dates.append((match, candidate))
+            seen.add(candidate)
+
+    events: list[dict] = []
+    for index, (match, candidate) in enumerate(unique_dates, start=1):
+        if range_pair and candidate == range_pair[1]:
+            continue
+        context = _sentence_at(text, match.start())
+        events.append(
+            _build_event(
+                dynamic,
+                event_date=candidate,
+                event_end_date=range_pair[1] if range_pair and candidate == range_pair[0] else None,
+                event_type=event_type,
+                title=(context or _title(text, event_type))[:80],
+                index=index,
+            )
+        )
+    return events
+
+
+def parse_arcaea_event(dynamic: dict) -> dict | None:
+    events = _parse_dynamic_events(dynamic)
+    return events[0] if events else None
 
 
 def parse_arcaea_events(dynamics: Iterable[dict]) -> list[dict]:
-    events = [parse_arcaea_event(item) for item in dynamics]
+    events = [event for item in dynamics for event in _parse_dynamic_events(item)]
     return sorted(
-        (event for event in events if event is not None),
+        events,
         key=lambda event: (event["event_date"], event["source_dynamic_id"]),
         reverse=True,
     )
