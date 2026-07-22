@@ -1,3 +1,6 @@
+import os
+import time
+
 from backend.bilibili import BilibiliError
 from backend.accounts import ACCOUNTS
 from backend.fetchers.accounts import fetch_account_dynamics
@@ -22,7 +25,8 @@ def refresh_all_accounts() -> dict[str, object]:
     initialize_database()
     successes: dict[str, int] = {}
     errors: dict[str, str] = {}
-    for account in ACCOUNTS:
+    delay_seconds = max(float(os.getenv("BILIBILI_ACCOUNT_DELAY_SECONDS", "2.5")), 0)
+    for index, account in enumerate(ACCOUNTS):
         try:
             items = fetch_account_dynamics(account)
             save_dynamics(items, game=account.display_name)
@@ -32,6 +36,8 @@ def refresh_all_accounts() -> dict[str, object]:
             message = str(exc)
             record_fetch_result(message, source=account.source)
             errors[account.name] = message
+        if delay_seconds and index < len(ACCOUNTS) - 1:
+            time.sleep(delay_seconds)
     if not successes:
         raise BilibiliError("All configured Bilibili accounts failed to refresh")
     return {"successes": successes, "errors": errors}

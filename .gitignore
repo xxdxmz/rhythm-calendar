@@ -6,7 +6,10 @@ __pycache__/
 secrets/*
 !secrets/.gitkeep
 data/raw/**/*.json
+data/raw/**/*.html
+data/raw/**/*.png
 !data/raw/.gitkeep
+data/browser-profile/
 data/*.sqlite3
 data/*.sqlite3-*
 data/logs/
