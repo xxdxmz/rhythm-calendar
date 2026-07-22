@@ -12,6 +12,7 @@ const eventColors: Record<EventItem['event_type'], string> = {
   VERSION_UPDATE: '#3f8cff', PACK_RELEASE: '#7457ff', SONG_ADD: '#db5cff',
   COLLABORATION: '#ff7a45', EVENT: '#20bfa9', MAINTENANCE: '#7b8194',
 }
+const isProjectSekai = (game: string) => game === '世界计划日服资讯' || game === '世界计划国服'
 
 export const useCalendarStore = defineStore('calendar', () => {
   const games = ref<Game[]>([])
@@ -44,7 +45,10 @@ export const useCalendarStore = defineStore('calendar', () => {
         allDay: true,
         backgroundColor: gameColor(item.game),
         borderColor: gameColor(item.game),
-        extendedProps: { source_dynamic_id: item.dynamic_id },
+        extendedProps: {
+          source_dynamic_id: item.dynamic_id,
+          display_priority: isProjectSekai(item.game) ? 10 : 0,
+        },
       }))
     const parsedEvents = filteredEvents.value.map((item) => ({
       id: item.id,
@@ -53,7 +57,10 @@ export const useCalendarStore = defineStore('calendar', () => {
       allDay: true,
       backgroundColor: activeGame.value === 'all' ? gameColor(item.game) : eventColors[item.event_type],
       borderColor: activeGame.value === 'all' ? gameColor(item.game) : eventColors[item.event_type],
-      extendedProps: item,
+      extendedProps: {
+        ...item,
+        display_priority: isProjectSekai(item.game) ? 10 : 0,
+      },
     }))
     return [...parsedEvents, ...fallbackEvents]
   })

@@ -31,6 +31,11 @@ const lastUpdated = computed(() => {
   }).format(new Date(store.status.last_success_at))
 })
 
+function calendarDisplayPriority(event: unknown) {
+  const extendedProps = (event as { extendedProps?: Record<string, unknown> }).extendedProps
+  return Number(extendedProps?.display_priority || 0)
+}
+
 const calendarOptions = computed<CalendarOptions>(() => ({
   plugins: [dayGridPlugin, timeGridPlugin],
   initialView: 'dayGridMonth',
@@ -44,6 +49,9 @@ const calendarOptions = computed<CalendarOptions>(() => ({
   },
   buttonText: { today: '今天', month: '月', week: '周' },
   events: store.calendarEvents,
+  eventOrder: (left: unknown, right: unknown) =>
+    calendarDisplayPriority(left) - calendarDisplayPriority(right),
+  eventOrderStrict: true,
   eventClick: openEvent,
   dayMaxEvents: 3,
   eventDisplay: 'block',
