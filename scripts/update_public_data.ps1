@@ -45,6 +45,7 @@ function Invoke-GitPush([int]$TimeoutSeconds = 45) {
     try {
         $output = @(& $git `
             -c http.schannelCheckRevoke=false `
+            -c http.version=HTTP/1.1 `
             -c http.lowSpeedLimit=1 `
             -c "http.lowSpeedTime=$TimeoutSeconds" `
             push origin main 2>&1)
