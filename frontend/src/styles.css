@@ -12,7 +12,7 @@ button, a { font: inherit; }
 .brand-mark span { width: 5px; background: white; border-radius: 3px; }
 .brand-mark span:nth-child(1) { height: 45%; }.brand-mark span:nth-child(2) { height: 90%; }.brand-mark span:nth-child(3) { height: 65%; }
 .sync-state { font-size: 12px; color: #9aa0b5; display: flex; align-items: center; gap: 8px; }
-.sync-state i { width: 7px; height: 7px; background: #45d6a5; border-radius: 50%; box-shadow: 0 0 12px #45d6a5; }.sync-state.stale i { background: #f5b84b; box-shadow: none; }
+.sync-state i { width: 7px; height: 7px; background: #45d6a5; border-radius: 50%; box-shadow: 0 0 12px #45d6a5; }.sync-state.stale i,.sync-state.partial i { background: #f5b84b; box-shadow: none; }
 main { max-width: 1440px; margin: auto; padding: 0 5vw 72px; }
 .hero { min-height: 330px; padding: 72px 0 52px; display: flex; justify-content: space-between; align-items: end; }
 .eyebrow { margin: 0 0 20px; color: #8e7aff; letter-spacing: .22em; font: 600 11px 'Space Grotesk'; }
@@ -21,6 +21,7 @@ h1 em { color: transparent; -webkit-text-stroke: 1px #8e7aff; font-style: normal
 .hero-copy { max-width: 570px; margin: 26px 0 0; color: #979bae; font-size: 15px; line-height: 1.8; }
 .hero-stat { display: flex; align-items: end; gap: 18px; padding-bottom: 7px; }
 .hero-stat > span { font: 600 64px/1 'Space Grotesk'; color: #8e7aff; }.hero-stat p { margin: 0; color: #858a9c; font-size: 12px; line-height: 1.6; }.hero-stat b { color: #fff; letter-spacing: .12em; }
+.game-filter { display: flex; gap: 8px; overflow-x: auto; padding: 0 0 18px; margin-top: -22px; scrollbar-width: thin; }.game-filter button { --game-color: #7457ff; flex: 0 0 auto; color: #898fa2; background: #12141e; border: 1px solid #292c3b; border-radius: 999px; padding: 8px 12px; font-size: 11px; cursor: pointer; }.game-filter button:hover,.game-filter button.active { color: #fff; border-color: var(--game-color); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--game-color) 40%, transparent); }.game-filter small { margin-left: 5px; color: #f5b84b; font-size: 8px; }
 .workspace { min-width: 0; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(320px, .75fr); gap: 20px; }
 .panel { min-width: 0; background: rgba(18,20,30,.86); border: 1px solid #292c3b; border-radius: 16px; box-shadow: 0 20px 70px rgba(0,0,0,.22); }
 .calendar-panel { padding: 22px; overflow: hidden; }.feed-panel { padding: 22px 0 0; max-height: 760px; overflow: hidden; }

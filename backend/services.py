@@ -1,5 +1,6 @@
 from backend.bilibili import BilibiliError
-from backend.fetchers.arcaea import fetch_arcaea_dynamics
+from backend.accounts import ACCOUNTS
+from backend.fetchers.accounts import fetch_account_dynamics
 from backend.storage import initialize_database, record_fetch_result, save_dynamics
 
 
@@ -14,3 +15,23 @@ def refresh_arcaea() -> int:
     save_dynamics(items)
     record_fetch_result(None)
     return len(items)
+
+
+def refresh_all_accounts() -> dict[str, object]:
+    """Refresh every configured account while preserving cache on partial failures."""
+    initialize_database()
+    successes: dict[str, int] = {}
+    errors: dict[str, str] = {}
+    for account in ACCOUNTS:
+        try:
+            items = fetch_account_dynamics(account)
+            save_dynamics(items, game=account.display_name)
+            record_fetch_result(None, source=account.source)
+            successes[account.name] = len(items)
+        except BilibiliError as exc:
+            message = str(exc)
+            record_fetch_result(message, source=account.source)
+            errors[account.name] = message
+    if not successes:
+        raise BilibiliError("All configured Bilibili accounts failed to refresh")
+    return {"successes": successes, "errors": errors}

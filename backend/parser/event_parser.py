@@ -96,9 +96,10 @@ def _build_event(
     event_end_date: date | None = None,
 ) -> dict:
     dynamic_id = str(dynamic["dynamic_id"])
+    game = str(dynamic.get("game") or "Arcaea")
     event = {
-        "id": f"arcaea-{dynamic_id}-{index}",
-        "game": "Arcaea",
+        "id": f"event-{dynamic_id}-{index}",
+        "game": game,
         "source_dynamic_id": dynamic_id,
         "title": title,
         "description": str(dynamic.get("text", "")).strip(),
@@ -168,3 +169,8 @@ def parse_arcaea_events(dynamics: Iterable[dict]) -> list[dict]:
         key=lambda event: (event["event_date"], event["source_dynamic_id"]),
         reverse=True,
     )
+
+
+def parse_events(dynamics: Iterable[dict]) -> list[dict]:
+    """Parse configured games with the shared date and keyword rules."""
+    return parse_arcaea_events(dynamics)

@@ -72,7 +72,7 @@ try {
         throw 'Git executable not found'
     }
 
-    Write-UpdateLog 'Starting anonymous Arcaea collection'
+    Write-UpdateLog 'Starting anonymous music-game account collection'
     Push-Location $projectRoot
     try {
         $env:GCM_INTERACTIVE = 'Never'

@@ -1,4 +1,4 @@
-"""Fetch Arcaea dynamics and export a frontend-friendly static snapshot."""
+"""Fetch configured music-game dynamics and export a static snapshot."""
 from __future__ import annotations
 
 import argparse
@@ -6,25 +6,23 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from backend.services import refresh_arcaea
+from backend.services import refresh_all_accounts
 from backend.bilibili import BilibiliError
 from backend.storage import get_fetch_status, initialize_database, latest_dynamics
-from backend.parser import parse_arcaea_events
-
-GAMES = [{"id": 1, "name": "Arcaea", "display_name": "Arcaea", "enabled": True}]
-
+from backend.parser import parse_events
+from backend.accounts import GAMES
 
 def export_snapshot(
     output: Path,
     *,
     refresh: bool = True,
-    limit: int = 50,
+    limit: int = 200,
     fallback: Path | None = None,
 ) -> dict:
     initialize_database()
     if refresh:
         try:
-            refresh_arcaea()
+            refresh_all_accounts()
         except BilibiliError as exc:
             if fallback is None or not fallback.exists():
                 raise
@@ -50,8 +48,8 @@ def export_snapshot(
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "games": GAMES,
         "dynamics": dynamics,
-        "events": parse_arcaea_events(dynamics),
-        "status": {**status, "stale": bool(status["last_error"])},
+        "events": parse_events(dynamics),
+        "status": status,
     }
     if not payload["dynamics"]:
         raise RuntimeError("No dynamics are available; refusing to publish an empty snapshot")
@@ -63,7 +61,7 @@ def export_snapshot(
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--limit", type=int, default=50)
+    parser.add_argument("--limit", type=int, default=200)
     parser.add_argument("--from-cache", action="store_true")
     parser.add_argument(
         "--fallback",

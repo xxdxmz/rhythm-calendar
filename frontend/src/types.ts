@@ -3,6 +3,8 @@ export interface Game {
   name: string
   display_name: string
   enabled: boolean
+  official: boolean
+  theme_color: string
 }
 
 export interface DynamicItem {
@@ -34,6 +36,13 @@ export interface FetchStatus {
   last_success_at: string | null
   last_error: string | null
   stale: boolean
+  partial_failure?: boolean
+  sources?: Array<{
+    source: string
+    last_attempt_at: string
+    last_success_at: string | null
+    last_error: string | null
+  }>
 }
 
 export interface StaticSnapshot {

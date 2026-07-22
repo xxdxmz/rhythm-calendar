@@ -1,3 +1,3 @@
-from .event_parser import parse_arcaea_event, parse_arcaea_events
+from .event_parser import parse_arcaea_event, parse_arcaea_events, parse_events
 
-__all__ = ["parse_arcaea_event", "parse_arcaea_events"]
+__all__ = ["parse_arcaea_event", "parse_arcaea_events", "parse_events"]

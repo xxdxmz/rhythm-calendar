@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from backend.scheduler.jobs import create_scheduler
 from backend.storage import get_fetch_status, initialize_database, latest_dynamics as read_latest_dynamics
+from backend.accounts import GAMES
 
 
 @asynccontextmanager
@@ -43,11 +44,11 @@ def health() -> dict[str, str]:
 
 @app.get("/api/games")
 def games() -> list[dict[str, object]]:
-    return [{"id": 1, "name": "Arcaea", "display_name": "Arcaea", "enabled": True}]
+    return GAMES
 
 
 @app.get("/api/dynamics/latest")
-def latest_dynamics(limit: int = Query(default=10, ge=1, le=50)) -> list[dict[str, str]]:
+def latest_dynamics(limit: int = Query(default=20, ge=1, le=500)) -> list[dict[str, str]]:
     return latest_dynamics_from_cache(limit)
 
 
@@ -56,6 +57,5 @@ def latest_dynamics_from_cache(limit: int) -> list[dict[str, str]]:
 
 
 @app.get("/api/dynamics/status")
-def dynamics_status() -> dict[str, str | bool | None]:
-    status = get_fetch_status()
-    return {**status, "stale": bool(status["last_error"])}
+def dynamics_status() -> dict[str, object]:
+    return get_fetch_status()

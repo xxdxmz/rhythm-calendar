@@ -51,22 +51,28 @@ def initialize_database(path: str | Path | None = None) -> None:
         )
 
 
-def save_dynamics(items: list[Dynamic], path: str | Path | None = None) -> None:
+def save_dynamics(
+    items: list[Dynamic],
+    path: str | Path | None = None,
+    *,
+    game: str = "Arcaea",
+) -> None:
     now = datetime.now(timezone.utc).isoformat()
     with connect(path) as db:
         db.executemany(
             """
             INSERT INTO dynamics
                 (dynamic_id, game, uid, text, publish_time, url, dynamic_type, raw_json, fetched_at)
-            VALUES (?, 'Arcaea', ?, ?, ?, ?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
             ON CONFLICT(dynamic_id) DO UPDATE SET
-                text=excluded.text, publish_time=excluded.publish_time,
+                game=excluded.game, text=excluded.text, publish_time=excluded.publish_time,
                 url=excluded.url, dynamic_type=excluded.dynamic_type,
                 raw_json=excluded.raw_json, fetched_at=excluded.fetched_at
             """,
             [
                 (
                     item.dynamic_id,
+                    game,
                     item.uid,
                     item.text,
                     item.publish_time.isoformat(),
@@ -80,24 +86,29 @@ def save_dynamics(items: list[Dynamic], path: str | Path | None = None) -> None:
         )
 
 
-def record_fetch_result(error: str | None, path: str | Path | None = None) -> None:
+def record_fetch_result(
+    error: str | None,
+    path: str | Path | None = None,
+    *,
+    source: str = "arcaea_bilibili",
+) -> None:
     now = datetime.now(timezone.utc).isoformat()
     with connect(path) as db:
         db.execute(
             """
             INSERT INTO fetch_status(source, last_attempt_at, last_success_at, last_error)
-            VALUES ('arcaea_bilibili', ?, ?, ?)
+            VALUES (?, ?, ?, ?)
             ON CONFLICT(source) DO UPDATE SET
                 last_attempt_at=excluded.last_attempt_at,
                 last_success_at=CASE WHEN excluded.last_error IS NULL
                     THEN excluded.last_success_at ELSE fetch_status.last_success_at END,
                 last_error=excluded.last_error
             """,
-            (now, now if error is None else None, error),
+            (source, now, now if error is None else None, error),
         )
 
 
-def latest_dynamics(limit: int = 10, path: str | Path | None = None) -> list[dict[str, str]]:
+def latest_dynamics(limit: int = 200, path: str | Path | None = None) -> list[dict[str, str]]:
     with connect(path) as db:
         rows = db.execute(
             """SELECT dynamic_id, game, uid, text, publish_time, url, dynamic_type, fetched_at
@@ -107,14 +118,34 @@ def latest_dynamics(limit: int = 10, path: str | Path | None = None) -> list[dic
     return [dict(row) for row in rows]
 
 
-def get_fetch_status(path: str | Path | None = None) -> dict[str, str | None]:
+def get_fetch_status(path: str | Path | None = None) -> dict[str, object]:
     with connect(path) as db:
-        row = db.execute(
-            "SELECT last_attempt_at, last_success_at, last_error FROM fetch_status "
-            "WHERE source='arcaea_bilibili'"
-        ).fetchone()
-    return dict(row) if row else {
+        rows = db.execute(
+            "SELECT source, last_attempt_at, last_success_at, last_error FROM fetch_status"
+        ).fetchall()
+    if not rows:
+        return {
         "last_attempt_at": None,
         "last_success_at": None,
         "last_error": None,
+        "stale": True,
+        "partial_failure": False,
+        "sources": [],
+        }
+    sources = [dict(row) for row in rows]
+    failed_rows = [row for row in rows if row["last_error"]]
+    errors = [f"{row['source']}: {row['last_error']}" for row in failed_rows]
+    return {
+        "last_attempt_at": max(row["last_attempt_at"] for row in rows),
+        "last_success_at": max(
+            (row["last_success_at"] for row in rows if row["last_success_at"]),
+            default=None,
+        ),
+        "last_error": (
+            failed_rows[0]["last_error"] if len(failed_rows) == 1
+            else "; ".join(errors) if errors else None
+        ),
+        "stale": not any(row["last_success_at"] for row in rows),
+        "partial_failure": bool(failed_rows) and any(row["last_success_at"] for row in rows),
+        "sources": sources,
     }

@@ -30,7 +30,7 @@ Register-ScheduledTask `
     -Trigger $trigger `
     -Settings $settings `
     -Principal $principal `
-    -Description 'Anonymous Arcaea collection and static JSON upload every six hours.' `
+    -Description 'Anonymous music-game account collection and static JSON upload every six hours.' `
     -Force | Out-Null
 
 Write-Output "Installed scheduled task: $taskName"

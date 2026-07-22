@@ -18,30 +18,44 @@ export const useCalendarStore = defineStore('calendar', () => {
   const dynamics = ref<DynamicItem[]>([])
   const events = ref<EventItem[]>([])
   const status = ref<FetchStatus | null>(null)
+  const activeGame = ref('all')
   const loading = ref(false)
   const error = ref('')
 
+  const filteredDynamics = computed(() => activeGame.value === 'all'
+    ? dynamics.value
+    : dynamics.value.filter((item) => item.game === activeGame.value))
+  const filteredEvents = computed(() => activeGame.value === 'all'
+    ? events.value
+    : events.value.filter((item) => item.game === activeGame.value))
+
+  function gameColor(gameName: string) {
+    return games.value.find((game) => game.display_name === gameName)?.theme_color || '#7457ff'
+  }
+
   const calendarEvents = computed(() => {
-    if (!events.value.length) {
-      return dynamics.value.map((item) => ({
+    const parsedDynamicIds = new Set(filteredEvents.value.map((item) => item.source_dynamic_id))
+    const fallbackEvents = filteredDynamics.value
+      .filter((item) => !parsedDynamicIds.has(item.dynamic_id))
+      .map((item) => ({
         id: item.dynamic_id,
-        title: item.text.split('\n').find(Boolean)?.slice(0, 30) || 'Arcaea 公告',
+        title: item.text.split('\n').find(Boolean)?.slice(0, 30) || `${item.game} 公告`,
         start: item.publish_time,
         allDay: true,
-        backgroundColor: '#7457ff',
-        borderColor: '#8e7aff',
+        backgroundColor: gameColor(item.game),
+        borderColor: gameColor(item.game),
         extendedProps: { source_dynamic_id: item.dynamic_id },
       }))
-    }
-    return events.value.map((item) => ({
+    const parsedEvents = filteredEvents.value.map((item) => ({
       id: item.id,
       title: `[${eventLabels[item.event_type]}] ${item.title.slice(0, 26)}`,
       start: item.event_date,
       allDay: true,
-      backgroundColor: eventColors[item.event_type],
-      borderColor: eventColors[item.event_type],
+      backgroundColor: activeGame.value === 'all' ? gameColor(item.game) : eventColors[item.event_type],
+      borderColor: activeGame.value === 'all' ? gameColor(item.game) : eventColors[item.event_type],
       extendedProps: item,
     }))
+    return [...parsedEvents, ...fallbackEvents]
   })
 
   function applySnapshot(snapshot: StaticSnapshot) {
@@ -78,5 +92,8 @@ export const useCalendarStore = defineStore('calendar', () => {
     }
   }
 
-  return { games, dynamics, events, status, loading, error, calendarEvents, load }
+  return {
+    games, dynamics, events, status, loading, error, activeGame,
+    filteredDynamics, filteredEvents, calendarEvents, load,
+  }
 })

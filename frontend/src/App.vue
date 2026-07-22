@@ -13,10 +13,14 @@ const store = useCalendarStore()
 const selected = ref<DynamicItem | null>(null)
 const selectedEvent = ref<EventItem | null>(null)
 const detailOpen = ref(false)
+const activeGameLabel = computed(() => store.activeGame === 'all'
+  ? '全部游戏'
+  : store.activeGame)
 
 const statusText = computed(() => {
   if (!store.status?.last_success_at) return '等待首次同步'
   if (store.status.stale) return '缓存数据'
+  if (store.status.partial_failure) return '部分账号缓存'
   return '同步正常'
 })
 
@@ -81,7 +85,7 @@ onMounted(store.load)
         <span class="brand-mark"><span></span><span></span><span></span></span>
         <span>RHYTHM<br /><b>CALENDAR</b></span>
       </a>
-      <div class="sync-state" :class="{ stale: store.status?.stale }">
+      <div class="sync-state" :class="{ stale: store.status?.stale, partial: store.status?.partial_failure }">
         <i></i>{{ statusText }} · {{ lastUpdated }}
       </div>
     </header>
@@ -95,9 +99,22 @@ onMounted(store.load)
         </div>
         <div class="hero-stat">
           <span>{{ store.dynamics.length.toString().padStart(2, '0') }}</span>
-          <p>已收录公告<br /><b>ARCAEA</b></p>
+          <p>已收录公告<br /><b>{{ store.games.length }} GAMES</b></p>
         </div>
       </section>
+
+      <nav class="game-filter" aria-label="游戏筛选">
+        <button :class="{ active: store.activeGame === 'all' }" @click="store.activeGame = 'all'">全部</button>
+        <button
+          v-for="game in store.games"
+          :key="game.id"
+          :class="{ active: store.activeGame === game.display_name }"
+          :style="{ '--game-color': game.theme_color }"
+          @click="store.activeGame = game.display_name"
+        >
+          {{ game.display_name }}<small v-if="!game.official">转载</small>
+        </button>
+      </nav>
 
       <el-alert v-if="store.error" :title="store.error" type="error" show-icon :closable="false" />
 
@@ -114,15 +131,15 @@ onMounted(store.load)
         <aside class="feed-panel panel">
           <div class="section-heading">
             <div><el-icon><Connection /></el-icon><span>最新动态</span></div>
-            <span class="game-chip">ARCAEA</span>
+            <span class="game-chip">{{ activeGameLabel }}</span>
           </div>
           <div class="feed-list">
-            <button v-for="item in store.dynamics.slice(0, 10)" :key="item.dynamic_id" class="feed-item" @click="openDynamic(item)">
-              <span class="feed-date">{{ formatDate(item.publish_time) }}</span>
-              <strong>{{ item.text.split('\n').find(Boolean) || 'Arcaea 官方公告' }}</strong>
+            <button v-for="item in store.filteredDynamics.slice(0, 20)" :key="item.dynamic_id" class="feed-item" @click="openDynamic(item)">
+              <span class="feed-date">{{ item.game }} · {{ formatDate(item.publish_time) }}</span>
+              <strong>{{ item.text.split('\n').find(Boolean) || `${item.game} 公告` }}</strong>
               <span class="feed-more">查看公告 <el-icon><TopRight /></el-icon></span>
             </button>
-            <div v-if="!store.loading && !store.dynamics.length" class="empty-state">尚无缓存数据</div>
+            <div v-if="!store.loading && !store.filteredDynamics.length" class="empty-state">该游戏尚无缓存数据</div>
           </div>
         </aside>
       </section>
@@ -131,7 +148,7 @@ onMounted(store.load)
     <footer><span>RHYTHM CALENDAR · 2026</span><span>数据来自游戏官方公开账号</span></footer>
 
     <el-drawer v-model="detailOpen" size="min(520px, 92vw)" direction="rtl" class="detail-drawer">
-      <template #header><span class="drawer-label">ARCAEA · 官方动态</span></template>
+      <template #header><span class="drawer-label">{{ selected?.game || '音乐游戏' }} · BILIBILI 动态</span></template>
       <template v-if="selected">
         <div v-if="selectedEvent" class="event-summary">
           <span>{{ eventTypeLabel(selectedEvent.event_type) }}</span>
