@@ -22,6 +22,27 @@ function Write-UpdateLog([string]$Message) {
     Write-Output $line
 }
 
+function Push-GitHubWithRetry {
+    $delays = @(0, 30, 120)
+    for ($attempt = 0; $attempt -lt $delays.Count; $attempt++) {
+        if ($delays[$attempt] -gt 0) {
+            Write-UpdateLog "Waiting $($delays[$attempt]) seconds before push retry"
+            Start-Sleep -Seconds $delays[$attempt]
+        }
+        $pushOutput = @(& $git push origin main 2>&1)
+        $pushExitCode = $LASTEXITCODE
+        foreach ($line in $pushOutput) {
+            if ($line) { Write-UpdateLog "git: $line" }
+        }
+        if ($pushExitCode -eq 0) {
+            Write-UpdateLog "GitHub push succeeded on attempt $($attempt + 1)"
+            return
+        }
+        Write-UpdateLog "GitHub push attempt $($attempt + 1) failed with exit code $pushExitCode"
+    }
+    throw 'GitHub push failed after 3 attempts; the local commit is preserved for the next run'
+}
+
 try {
     if (-not (Test-Path -LiteralPath $python)) {
         throw "Python environment not found: $python"
@@ -33,6 +54,13 @@ try {
     Write-UpdateLog 'Starting anonymous Arcaea collection'
     Push-Location $projectRoot
     try {
+        $env:GCM_INTERACTIVE = 'Never'
+        $ahead = & $git rev-list --count '@{upstream}..HEAD'
+        if ($LASTEXITCODE -eq 0 -and [int]$ahead -gt 0) {
+            Write-UpdateLog "Found $ahead pending local commit(s); uploading them first"
+            Push-GitHubWithRetry
+        }
+
         & $python -m backend.export_static --output $snapshot
         if ($LASTEXITCODE -ne 0) { throw "Collector exited with $LASTEXITCODE" }
 
@@ -55,8 +83,7 @@ try {
         }
         & $git commit -m "Update Arcaea dynamics $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
         if ($LASTEXITCODE -ne 0) { throw "Git commit exited with $LASTEXITCODE" }
-        & $git push origin main
-        if ($LASTEXITCODE -ne 0) { throw "Git push exited with $LASTEXITCODE" }
+        Push-GitHubWithRetry
         Write-UpdateLog 'Snapshot uploaded successfully'
     }
     finally {
