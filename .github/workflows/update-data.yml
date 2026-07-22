@@ -1,8 +1,6 @@
 name: Update public dynamics data
 
 on:
-  schedule:
-    - cron: "17 */6 * * *"
   push:
     branches: [main]
     paths:
@@ -26,23 +24,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: pip
-      - run: pip install -r requirements.txt
-      - run: python -m playwright install --with-deps chromium
       - name: Publish snapshot collected by the local computer
-        if: github.event_name == 'push'
         run: |
           mkdir -p public-data/data
           cp frontend/public/data/snapshot.json public-data/data/snapshot.json
-      - name: Cloud collection with cached fallback
-        if: github.event_name != 'push'
-        run: >-
-          python -m backend.export_static
-          --output public-data/data/snapshot.json
-          --fallback frontend/public/data/snapshot.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
