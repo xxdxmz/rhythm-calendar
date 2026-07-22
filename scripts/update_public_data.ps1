@@ -23,36 +23,24 @@ function Write-UpdateLog([string]$Message) {
 }
 
 function Invoke-GitPush([int]$TimeoutSeconds = 45) {
-    $startInfo = New-Object System.Diagnostics.ProcessStartInfo
-    $startInfo.FileName = $git
-    $startInfo.Arguments = '-c http.sslBackend=openssl push origin main'
-    $startInfo.WorkingDirectory = $projectRoot
-    $startInfo.UseShellExecute = $false
-    $startInfo.CreateNoWindow = $true
-    $startInfo.RedirectStandardOutput = $true
-    $startInfo.RedirectStandardError = $true
-    $startInfo.EnvironmentVariables['GCM_INTERACTIVE'] = 'Never'
-    # The Windows certificate-revocation endpoint is blocked on some networks.
-    # Use Git's bundled OpenSSL backend for this unattended push while keeping
-    # normal TLS certificate validation enabled.
-
-    $process = New-Object System.Diagnostics.Process
-    $process.StartInfo = $startInfo
-    [void]$process.Start()
-    $stdout = $process.StandardOutput.ReadToEndAsync()
-    $stderr = $process.StandardError.ReadToEndAsync()
-    if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
-        $process.Kill()
-        $process.WaitForExit()
-        return [pscustomobject]@{
-            ExitCode = 124
-            Output = "git push timed out after $TimeoutSeconds seconds"
-        }
+    # Git writes normal progress to stderr. Temporarily keep native stderr from
+    # becoming a terminating PowerShell error and judge success by ExitCode.
+    # Revocation lookup is disabled only for this command because that Windows
+    # endpoint is blocked on the current network; certificate validation stays on.
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        $output = @(& $git `
+            -c http.schannelCheckRevoke=false `
+            -c http.lowSpeedLimit=1 `
+            -c "http.lowSpeedTime=$TimeoutSeconds" `
+            push origin main 2>&1)
+        $exitCode = $LASTEXITCODE
     }
-    return [pscustomobject]@{
-        ExitCode = $process.ExitCode
-        Output = (($stdout.Result, $stderr.Result) -join "`n").Trim()
+    finally {
+        $ErrorActionPreference = $previousErrorActionPreference
     }
+    return [pscustomobject]@{ ExitCode = $exitCode; Output = ($output -join "`n") }
 }
 
 function Push-GitHubWithRetry {
