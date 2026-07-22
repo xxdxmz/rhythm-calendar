@@ -9,6 +9,7 @@ from pathlib import Path
 from backend.services import refresh_arcaea
 from backend.bilibili import BilibiliError
 from backend.storage import get_fetch_status, initialize_database, latest_dynamics
+from backend.parser import parse_arcaea_events
 
 GAMES = [{"id": 1, "name": "Arcaea", "display_name": "Arcaea", "enabled": True}]
 
@@ -44,10 +45,12 @@ def export_snapshot(
             )
             return payload
     status = get_fetch_status()
+    dynamics = latest_dynamics(limit)
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "games": GAMES,
-        "dynamics": latest_dynamics(limit),
+        "dynamics": dynamics,
+        "events": parse_arcaea_events(dynamics),
         "status": {**status, "stale": bool(status["last_error"])},
     }
     if not payload["dynamics"]:

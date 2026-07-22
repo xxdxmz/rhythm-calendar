@@ -45,7 +45,8 @@ const calendarOptions = computed<CalendarOptions>(() => ({
 }))
 
 function openEvent(arg: EventClickArg) {
-  selected.value = arg.event.extendedProps as DynamicItem
+  const sourceId = String(arg.event.extendedProps.source_dynamic_id || arg.event.id)
+  selected.value = store.dynamics.find((item) => item.dynamic_id === sourceId) || null
   detailOpen.value = true
 }
 
@@ -96,7 +97,7 @@ onMounted(store.load)
             <div><el-icon><Calendar /></el-icon><span>更新日历</span></div>
             <button class="refresh-button" @click="store.load"><el-icon><Refresh /></el-icon>刷新</button>
           </div>
-          <p class="calendar-note">当前按官方公告发布日期展示</p>
+          <p class="calendar-note">优先按公告中提取的更新日期展示；未解析公告使用发布日期</p>
           <FullCalendar :options="calendarOptions" />
         </div>
 

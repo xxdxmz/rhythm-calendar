@@ -1,32 +1,45 @@
 import { computed, ref } from 'vue'
 import { defineStore } from 'pinia'
 import { api } from '../api/client'
-import type { DynamicItem, FetchStatus, Game, StaticSnapshot } from '../types'
+import type { DynamicItem, EventItem, FetchStatus, Game, StaticSnapshot } from '../types'
 
 const staticDataUrl = import.meta.env.VITE_STATIC_DATA_URL as string | undefined
 
 export const useCalendarStore = defineStore('calendar', () => {
   const games = ref<Game[]>([])
   const dynamics = ref<DynamicItem[]>([])
+  const events = ref<EventItem[]>([])
   const status = ref<FetchStatus | null>(null)
   const loading = ref(false)
   const error = ref('')
 
-  const calendarEvents = computed(() =>
-    dynamics.value.map((item) => ({
-      id: item.dynamic_id,
-      title: item.text.split('\n').find(Boolean)?.slice(0, 30) || 'Arcaea 公告',
-      start: item.publish_time,
+  const calendarEvents = computed(() => {
+    if (!events.value.length) {
+      return dynamics.value.map((item) => ({
+        id: item.dynamic_id,
+        title: item.text.split('\n').find(Boolean)?.slice(0, 30) || 'Arcaea 公告',
+        start: item.publish_time,
+        allDay: true,
+        backgroundColor: '#7457ff',
+        borderColor: '#8e7aff',
+        extendedProps: { source_dynamic_id: item.dynamic_id },
+      }))
+    }
+    return events.value.map((item) => ({
+      id: item.id,
+      title: item.title.slice(0, 30),
+      start: item.event_date,
       allDay: true,
       backgroundColor: '#7457ff',
       borderColor: '#8e7aff',
       extendedProps: item,
-    })),
-  )
+    }))
+  })
 
   function applySnapshot(snapshot: StaticSnapshot) {
     games.value = snapshot.games
     dynamics.value = snapshot.dynamics
+    events.value = snapshot.events || []
     status.value = snapshot.status
   }
 
@@ -57,5 +70,5 @@ export const useCalendarStore = defineStore('calendar', () => {
     }
   }
 
-  return { games, dynamics, status, loading, error, calendarEvents, load }
+  return { games, dynamics, events, status, loading, error, calendarEvents, load }
 })

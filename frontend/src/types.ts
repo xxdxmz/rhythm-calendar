@@ -16,6 +16,18 @@ export interface DynamicItem {
   fetched_at: string
 }
 
+export interface EventItem {
+  id: string
+  game: string
+  source_dynamic_id: string
+  title: string
+  description: string
+  event_type: 'VERSION_UPDATE' | 'PACK_RELEASE' | 'SONG_ADD' | 'COLLABORATION' | 'EVENT' | 'MAINTENANCE'
+  event_date: string
+  url: string
+  status: 'AUTO_PARSED' | 'REVIEWED'
+}
+
 export interface FetchStatus {
   last_attempt_at: string | null
   last_success_at: string | null
@@ -27,5 +39,6 @@ export interface StaticSnapshot {
   generated_at: string
   games: Game[]
   dynamics: DynamicItem[]
+  events?: EventItem[]
   status: FetchStatus
 }

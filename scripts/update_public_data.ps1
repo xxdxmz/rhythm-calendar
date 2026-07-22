@@ -22,6 +22,36 @@ function Write-UpdateLog([string]$Message) {
     Write-Output $line
 }
 
+function Invoke-GitPush([int]$TimeoutSeconds = 45) {
+    $startInfo = New-Object System.Diagnostics.ProcessStartInfo
+    $startInfo.FileName = $git
+    $startInfo.Arguments = 'push origin main'
+    $startInfo.WorkingDirectory = $projectRoot
+    $startInfo.UseShellExecute = $false
+    $startInfo.CreateNoWindow = $true
+    $startInfo.RedirectStandardOutput = $true
+    $startInfo.RedirectStandardError = $true
+    $startInfo.EnvironmentVariables['GCM_INTERACTIVE'] = 'Never'
+
+    $process = New-Object System.Diagnostics.Process
+    $process.StartInfo = $startInfo
+    [void]$process.Start()
+    $stdout = $process.StandardOutput.ReadToEndAsync()
+    $stderr = $process.StandardError.ReadToEndAsync()
+    if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
+        $process.Kill()
+        $process.WaitForExit()
+        return [pscustomobject]@{
+            ExitCode = 124
+            Output = "git push timed out after $TimeoutSeconds seconds"
+        }
+    }
+    return [pscustomobject]@{
+        ExitCode = $process.ExitCode
+        Output = (($stdout.Result, $stderr.Result) -join "`n").Trim()
+    }
+}
+
 function Push-GitHubWithRetry {
     $delays = @(0, 30, 120)
     for ($attempt = 0; $attempt -lt $delays.Count; $attempt++) {
@@ -29,9 +59,9 @@ function Push-GitHubWithRetry {
             Write-UpdateLog "Waiting $($delays[$attempt]) seconds before push retry"
             Start-Sleep -Seconds $delays[$attempt]
         }
-        $pushOutput = @(& $git push origin main 2>&1)
-        $pushExitCode = $LASTEXITCODE
-        foreach ($line in $pushOutput) {
+        $pushResult = Invoke-GitPush
+        $pushExitCode = $pushResult.ExitCode
+        foreach ($line in @($pushResult.Output -split "`r?`n")) {
             if ($line) { Write-UpdateLog "git: $line" }
         }
         if ($pushExitCode -eq 0) {
@@ -61,7 +91,7 @@ try {
             Push-GitHubWithRetry
         }
 
-        & $python -m backend.export_static --output $snapshot
+        & $python -m backend.export_static --output $snapshot --fallback $snapshot
         if ($LASTEXITCODE -ne 0) { throw "Collector exited with $LASTEXITCODE" }
 
         $payload = Get-Content -LiteralPath $snapshot -Raw -Encoding UTF8 | ConvertFrom-Json

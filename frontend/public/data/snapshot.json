@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-22T03:24:03.280237+00:00",
+  "generated_at": "2026-07-22T03:28:51.456939+00:00",
   "games": [
     {
       "id": 1,
@@ -138,6 +138,107 @@
       "url": "https://www.bilibili.com/opus/1115605755020443734",
       "dynamic_type": "DYNAMIC_TYPE_AV",
       "fetched_at": "2026-07-22T03:24:03.271403+00:00"
+    }
+  ],
+  "events": [
+    {
+      "id": "arcaea-1216912241695129622",
+      "game": "Arcaea",
+      "source_dynamic_id": "1216912241695129622",
+      "title": "请留意：综合曲包《Virtual Singers》为期间限定获得内容，须在2029年6月24日前取得，",
+      "description": "请留意：综合曲包《Virtual Singers》为期间限定获得内容，须在2029年6月24日前取得，\n规定时段内未获取的，将无法通过任何其他方式获取。\n\n在规定时段内购买该曲包后，\n曲包内容在2029年6月24日后仍然有效。\n#韵律源点# #arcaea# #音游#",
+      "event_type": "PACK_RELEASE",
+      "event_date": "2029-06-24",
+      "url": "https://www.bilibili.com/opus/1216912241695129622",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1217283069206069255",
+      "game": "Arcaea",
+      "source_dynamic_id": "1217283069206069255",
+      "title": "糖果，糖果…",
+      "description": "糖果，糖果…\n溶化，溶化…\n是色彩与甜蜜的诱惑。\n\n6月25日，全新原创单曲「Sucromania」by STEAKA将加入回忆档案馆。\n#韵律源点# #arcaea# #音游#",
+      "event_type": "SONG_ADD",
+      "event_date": "2026-06-25",
+      "url": "https://www.bilibili.com/opus/1217283069206069255",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1216912499382681602",
+      "game": "Arcaea",
+      "source_dynamic_id": "1216912499382681602",
+      "title": "v6.15版本起，曲包选择菜单将新增一个类别——“综合”，其中的歌曲种类将进一步丰富！",
+      "description": "v6.15版本起，曲包选择菜单将新增一个类别——“综合”，其中的歌曲种类将进一步丰富！\n\n《Arcaea Next Stage》和《UNDERTALE》曲包将归属于这一新类别，而首个新加入的曲包是将于6月25日上线的《Virtual Singers》。\n#韵律源点# #arcaea# #音游#",
+      "event_type": "PACK_RELEASE",
+      "event_date": "2026-06-25",
+      "url": "https://www.bilibili.com/opus/1216912499382681602",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1216911984017014839",
+      "game": "Arcaea",
+      "source_dynamic_id": "1216911984017014839",
+      "title": "Arcaea v6.15版本将迎来全新“综合”类别曲包，涵盖一对熟悉面孔所歌唱的五首新曲！",
+      "description": "Arcaea v6.15版本将迎来全新“综合”类别曲包，涵盖一对熟悉面孔所歌唱的五首新曲！\n\n《Virtual Singers》曲包将自6月25日起开放获取。\n\n来自四面八方的梦想，自数字的舞台上汇聚！\n#韵律源点# #arcaea# #音游#",
+      "event_type": "PACK_RELEASE",
+      "event_date": "2026-06-25",
+      "url": "https://www.bilibili.com/opus/1216911984017014839",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1206521856855638019",
+      "game": "Arcaea",
+      "source_dynamic_id": "1206521856855638019",
+      "title": "奈美的限时角色地图具体活动时间为北京时间5月28日08:00至6月18日23:00！",
+      "description": "奈美的限时角色地图具体活动时间为北京时间5月28日08:00至6月18日23:00！\n#韵律源点# #arcaea# #音游#",
+      "event_type": "EVENT",
+      "event_date": "2026-05-28",
+      "url": "https://www.bilibili.com/opus/1206521856855638019",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1206521599102025728",
+      "game": "Arcaea",
+      "source_dynamic_id": "1206521599102025728",
+      "title": "再次踏上这段无尽之旅吧！",
+      "description": "再次踏上这段无尽之旅吧！\n\n奈美（暮光）将于5月28日起限时返场！\n#韵律源点# #arcaea# #音游#",
+      "event_type": "EVENT",
+      "event_date": "2026-05-28",
+      "url": "https://www.bilibili.com/opus/1206521599102025728",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1205779686496403461",
+      "game": "Arcaea",
+      "source_dynamic_id": "1205779686496403461",
+      "title": "「flexidefine」by Lamanya将于5月28日加入世界模式！该曲目的限时地图具体活动时间为北京时间5月28日08:00至6月18日23:00！",
+      "description": "「flexidefine」by Lamanya将于5月28日加入世界模式！该曲目的限时地图具体活动时间为北京时间5月28日08:00至6月18日23:00！\n#韵律源点# #arcaea# #音游#",
+      "event_type": "SONG_ADD",
+      "event_date": "2026-05-28",
+      "url": "https://www.bilibili.com/opus/1205779686496403461",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1205779428793122819",
+      "game": "Arcaea",
+      "source_dynamic_id": "1205779428793122819",
+      "title": "天地之变，静止于震颤间。",
+      "description": "天地之变，静止于震颤间。\n吐息之间，异响幻化新生。\n\n「flexidefine」by Lamanya将随5月28日v6.14.10版本更新加入World Extend。\n#韵律源点# #arcaea# #音游#",
+      "event_type": "SONG_ADD",
+      "event_date": "2026-05-28",
+      "url": "https://www.bilibili.com/opus/1205779428793122819",
+      "status": "AUTO_PARSED"
+    },
+    {
+      "id": "arcaea-1115605755020443734",
+      "game": "Arcaea",
+      "source_dynamic_id": "1115605755020443734",
+      "title": "有一个更好的地方，那颗动摇的心脏带来的毁灭无法触及；有一个更好的地方，而你——就在那里。",
+      "description": "有一个更好的地方，那颗动摇的心脏带来的毁灭无法触及；有一个更好的地方，而你——就在那里。\n\n和摩耶一起去另一边吧。 10月2日，Arcaea 6.9版本第二幕主线剧情曲包第叁点伍弹《Liminal Eclipse》将发布，涵盖5首新曲。\n#韵律源点# #arcaea# #音游#",
+      "event_type": "PACK_RELEASE",
+      "event_date": "2025-10-02",
+      "url": "https://www.bilibili.com/opus/1115605755020443734",
+      "status": "AUTO_PARSED"
     }
   ],
   "status": {
